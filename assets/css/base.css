@@ -8930,9 +8930,9 @@ ul > .scTruncateEllipsis {
   #navTopLevel.mobileDropDownNav {
     overflow: hidden;
   }
-  #navTopLevel.mobileDropDownNav.collapsed {
+  /* #navTopLevel.mobileDropDownNav.collapsed {
     height: 0;
-  }
+  } */
   .navContainer.mobileDropDownNav {
     overflow: hidden;
     padding-top: 0;

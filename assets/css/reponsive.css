@@ -20,6 +20,19 @@ Responsive CSS Portrait Tablet
 Responsive CSS Landscape Mobile
 ========================================================================== */
 @media only screen and (min-width: 561px) and (max-width: 767px) {
+  .navContainer.mobileDropDownNav {
+    opacity: 1;
+    position: relative;
+  }
+
+  .primaryAndSecondaryContainer {
+    margin-top: 0px;
+  }
+
+  .navContainer {
+    height: 246px;
+  }
+
   .h-mobile {
     display: block;
   }
@@ -61,12 +74,25 @@ Responsive CSS Landscape Mobile
     padding-left: 0 !important;
     padding-top: 30px !important;
   }
+  
 }
 
 /* ==========================================================================
 Responsive CSS Portrait Mobile
 ========================================================================== */
 @media only screen and (min-width: 100px) and (max-width: 560px) {
+  .navContainer.mobileDropDownNav {
+    opacity: 1;
+    position: relative;
+  }
+  .primaryAndSecondaryContainer {
+    margin-top: 0px;
+  }
+
+  .navContainer {
+    height: 246px;
+  }
+
   .h-mobile {
     display: block;
   }
