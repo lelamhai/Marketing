@@ -13,7 +13,15 @@ Responsive CSS Landscape Tablet
 Responsive CSS Portrait Tablet
 ========================================================================== */
 @media only screen and (min-width: 768px) and (max-width: 959px) {
- 
+  .account-column {
+    width: 100% !important;
+  }
+
+  .account-column1,
+  .account-column2 {
+    box-shadow: unset !important;
+    border: 1px solid;
+  }
 }
   
 /* ==========================================================================
@@ -133,5 +141,25 @@ Responsive CSS Portrait Mobile
   .footer-right .h-right-footer {
     padding-left: 0 !important;
     padding-top: 30px !important;
+  }
+}
+
+/* ==========================================================================
+Responsive CSS Mobile
+========================================================================== */
+@media only screen and (min-width: 100px) and (max-width: 767px) {
+  .account-column {
+    width: 99% !important;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+  .account-column1,
+  .account-column2 {
+    width: 100% !important;
+    margin: 0 !important;
+    box-shadow: unset !important;
+    border: 1px solid;
+    margin-top: 15px !important;
   }
 }
