@@ -8,9 +8,12 @@
                            <div class="blockContainer anim fadeup js-anim blockWrap_e36a212bc2b840c68d579c5ae522ca75 fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeRight" itemscope="" itemtype="http://schema.org/ImageGallery">
                               <div class="blockContent imageGallery imagesCollection block_e36a212bc2b840c68d579c5ae522ca75  layoutA blockContentBleed hasImg hasStackedGallery deferredLoadGallery imgOnly" data-image-count="1" data-pagination-anim="none" data-pagenum="1" data-img-server="https://static.mywebsites360.com" data-gallery-block-id="e36a212bc2b840c68d579c5ae522ca75" data-large-img-opts="2GTQbgiNxerRr5gcT6hkjr8dsnb6NBTxXMi2obS">
                                  <div class="blockImg">
-                                    <ul class="stackedGallery galleryWrapper imagesLoaded" data-collections="eyJ0eXBlIjoiaW1hZ2VzIiwicGFyYW1zIjp7ImxheW91dCI6InN0YWNrIiwicXVlcnkiOnsiaWQiOlsiYmU3MmQyNDI0NDM5NDZhZDk3NGY4Njc5NWNhMzc5NzQiXX0sImRlc2lnbiI6eyJjYW5FZGl0IjpmYWxzZSwiY2FuRGVzaWduIjpmYWxzZSwibWF4Q29ubmVjdGlvbnMiOjYsInVzZURlZmVycmVkTG9hZGluZyI6dHJ1ZSwiaW1hZ2VNb2QiOiJ3aWR0aDo0MDAwIiwiaW1nUmVzaXplT3BlcmF0aW9uIjoid2lkdGgiLCJpbWdSZXNpemVEaW1lbnNpb24iOjQwMDAsImltYWdlU2VydmVyIjoiaHR0cHM6Ly9zdGF0aWMubXl3ZWJzaXRlczM2MC5jb20iLCJzaXRlSWQiOiJjN2NjNmM3YTU1ZDk0MzhjOGY0OTExMWM5YjZiZjEwOSIsImltYWdlVmVyc2lvbiI6MjAsImltYWdlT3B0cyI6eyJjbGFzc05hbWUiOiJjb250ZW50SW1nIiwic2hvd09yaWciOmZhbHNlfSwiaW1hZ2VMaW5rcyI6W3siaWQiOiJiZTcyZDI0MjQ0Mzk0NmFkOTc0Zjg2Nzk1Y2EzNzk3NCIsInVybCI6IiIsIm5ld1dpbmRvdyI6ZmFsc2V9XX19fQ==">
+                                    <ul class="stackedGallery galleryWrapper imagesLoaded">
+                                       <?php
+                                          $session1 = get_field('session_1', 'option');
+                                       ?>
                                        <li class="stackedGallery-item">
-                                          <img src="<?php echo get_bloginfo("template_directory"); ?>/assets/imgs/TourByIndustryOptimized21.png" data-asset="f921905f8b1f41a3a1bd01a8b45adc6a" alt="TourByIndustryOptimized21.png" data-mod="width:4000" class="contentImg visible ended">
+                                          <img src="<?php echo $session1['image-1'] ?> " data-asset="f921905f8b1f41a3a1bd01a8b45adc6a" alt="TourByIndustryOptimized21.png" data-mod="width:4000" class="contentImg visible ended">
                                        </li>
                                     </ul>
                                  </div>
@@ -24,11 +27,48 @@
                                  <div class="blockContent block_d53e455f20924c9e9d225a6cf57f288e  blockContentBleed industryIntro">
                                     <div class="blockInnerContent">
                                        <div class="maxWidth--content">
-                                          <!--<h2 class="contentTitle">Get everything you need to manage and grow your <span>Business</span></h2>-->
-                                          <h2 class="contentTitle dsktpOnly">Get everything you need to manage and grow your <span class="typewrite contentTitle" data-period="2000" data-type="[ &quot;business&quot;, &quot;brand&quot;, &quot;franchise&quot;, &quot;practice&quot;, &quot;shop&quot;, &quot;gym&quot;, &quot;law firm&quot;, &quot;restaurant&quot;, &quot;salon&quot;]"><span class="wrap">busines</span></span> <span class="wrap"></span></h2>
+                                          <!-- PC --> 
+                                          <?php 
+                                             $data = "";
+                                             $frist = "";
+                                             if( have_rows('session_1', 'option') ): ?>
 
-                                          <!--mobile text only-->
-                                          <h2 class="contentTitle moblOnly">Get everything you need to manage and grow your <span class="typeMobile"> business</span></h2>
+                                                <?php while( have_rows('session_1', 'option') ): the_row(); ?>
+                                                      <?php
+                                                         $countRepeater = count(get_sub_field('text_blue-1'));
+                                                         $count = 1;
+                                                         while( have_rows('text_blue-1') ) : the_row();
+                                                            if($count == 1)
+                                                            {
+                                                               $frist = get_sub_field('text');
+                                                            }
+                                                            if($count == $countRepeater)
+                                                            {
+                                                               $data = $data."&quot;".get_sub_field('text')."&quot;";
+                                                            } else if($countRepeater > 0)
+                                                            {
+                                                               $data = $data."&quot;".get_sub_field('text')."&quot;,";
+                                                            }
+                                                            $count ++;
+                                                            
+                                                   endwhile;
+                                                      ?>
+                                                <?php endwhile; ?>
+                                             <?php endif; ?>
+                                             
+                                          
+                                          <?php
+                                           
+                                             if( $session1 )
+                                             {
+                                                ?>
+                                                    <h2 class="contentTitle dsktpOnly"><?php echo $session1['title-1'] ?> <span class="typewrite contentTitle" data-period="2000" data-type="[<?php echo $data?>]"><span class="wrap"><?php echo  $frist?></span></span> <span class="wrap"></span></h2>
+                                                <?php
+                                             }
+                                          ?>
+
+                                          <!--Mobile-->
+                                          <h2 class="contentTitle moblOnly"><?php echo $session1['title-1'] ?> <span class="typeMobile"> <?php echo  $frist?></span></h2>
                                        </div>
                                     </div>
                                  </div>
@@ -38,7 +78,7 @@
                                        <div class="blockText">
                                           <div class="blockInnerContent">
                                              <div class="maxWidth--content">
-                                                <p>The tools you need to scale and the marketing programs and talent you need to grow — all from a singular platform.</p>
+                                                <p><?php echo $session1['content-1'] ?></p>
                                              </div>
                                           </div>
                                        </div>
@@ -51,7 +91,17 @@
                                        <div class="blockText">
                                           <div class="blockInnerContent">
                                              <div class="maxWidth--content">
-                                                <p><a href="#" class="button">Plans &amp; Pricing</a></p>
+                                                <?php if( have_rows('session_1', 'option') ): ?>
+                                                   <?php while( have_rows('session_1', 'option') ): the_row(); ?>
+                                                         <?php
+                                                            while( have_rows('button-1') ) : the_row();
+                                                               ?>
+                                                                  <p><a href="<?php echo get_sub_field('link')?>" class="button"><?php echo get_sub_field('text')?></a></p>
+                                                               <?php
+                                                            endwhile;
+                                                         ?>
+                                                   <?php endwhile; ?>
+                                                <?php endif; ?>
                                              </div>
                                           </div>
                                        </div>
@@ -91,10 +141,29 @@
                            <div id="explore" class="blockContainer anim fadeup js-anim blockWrap_e102cfb01feb45a5a922f4eafc3ab1b1 fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fade">
                               <div class="blockContent block_e102cfb01feb45a5a922f4eafc3ab1b1  layoutA">
                                  <div class="blockText">
-                                    <h2 class="contentTitle"><span class="maxWidth--contentTitle">#1 Marketing Platform® for Small Business</span></h2>
+                                       <?php
+                                          $session2 = get_field('session_2', 'option');
+                                       ?>
+
+                                    <h2 class="contentTitle"><span class="maxWidth--contentTitle"><?php echo $session2['title-2'] ?></span></h2>
                                     <div class="blockInnerContent">
                                        <div class="maxWidth--content">
-                                          <p>Over 20,000 small businesses use Marketing 360® to manage and grow their business. Not only do you get the tools you need to scale, but you get the do-it-for-you marketing programs you need to grow — all in one platform. <a href="#">Tour by industry</a>.</p>
+                                          <p>
+                                             <?php echo $session2['content-2'] ?>
+
+                                                <?php if( have_rows('session_2', 'option') ): ?>
+                                                   <?php while( have_rows('session_2', 'option') ): the_row(); ?>
+                                                         <?php
+                                                            while( have_rows('text_blue-2') ) : the_row();
+                                                               ?>
+                                                                  <a href="<?php echo get_sub_field('link')?>"><?php echo get_sub_field('text')?></a>.</p>
+                                                               <?php
+                                                            endwhile;
+                                                         ?>
+                                                   <?php endwhile; ?>
+                                                <?php endif; ?>
+                                          
+                                                
                                        </div>
                                     </div>
                                  </div>
@@ -106,6 +175,9 @@
                            <!-- /blockContainer -->
                            <div class="blockContainer anim fadeup js-anim blockWrap_f786a8ec71554741a1390a1098432968 fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeUp">
                               <div class="blockContent block_f786a8ec71554741a1390a1098432968  layoutC layoutC--vAlign1 imgWidth--50 hasImg">
+                                       <?php
+                                          $session3 = get_field('session_3', 'option');
+                                       ?>
                                  <div class="blockImg"><a href="#"><img src="<?php echo get_bloginfo("template_directory"); ?>/assets/imgs/team-2021.png" data-asset="f4968bc1a4cd407fbb9961518e631bd3" alt="team-2021.png" data-mod="width:700" class="contentImg"></a></div>
                                  <div class="blockText">
                                     <h2 class="contentTitle">
@@ -113,19 +185,55 @@
                                           <div class="blockContainer blockWrap_d78327a729b344a1bc21ea2c2a2c85a9 fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeRight secondaryTitle">
                                              <div class="blockContent block_d78327a729b344a1bc21ea2c2a2c85a9  layoutA">
                                                 <div class="blockText">
-                                                   <h2 class="contentTitle"><span class="maxWidth--contentTitle">Marketing Team</span></h2>
+                                                   <h2 class="contentTitle"><span class="maxWidth--contentTitle">
+                                                      <?php if( have_rows('session_3', 'option') ): ?>
+                                                         <?php while( have_rows('session_3', 'option') ): the_row(); ?>
+                                                               <?php
+                                                                  while( have_rows('icon-3') ) : the_row();
+                                                                     ?>
+                                                                        <?php echo get_sub_field('text')?>
+                                                                     <?php
+                                                                  endwhile;
+                                                               ?>
+                                                         <?php endwhile; ?>
+                                                      <?php endif; ?>
+                                                   </span></h2>
                                                 </div>
                                                 <!-- /blockText-->
                                              </div>
                                              <!-- /blockContent -->
                                           </div>
-                                          Turbocharge your marketing
+                                          <?php echo $session3['title-3'] ?>
                                        </span>
                                     </h2>
                                     <div class="blockInnerContent">
                                        <div class="maxWidth--content">
-                                          <p>Leverage industry specific marketing programs and a dedicated marketing team to grow your business while you focus on running it. <a href="#">Learn more</a>.</p>
-                                          <p><a href="#" class="button">Plans &amp; Pricing</a></p>
+                                          <p><?php echo $session3['content-3']?>
+                                                <?php if( have_rows('session_3', 'option') ): ?>
+                                                   <?php while( have_rows('session_3', 'option') ): the_row(); ?>
+                                                         <?php
+                                                            while( have_rows('text_blue-3') ) : the_row();
+                                                               ?>
+                                                                  <a href="<?php echo get_sub_field('link')?>"><?php echo get_sub_field('text')?></a>.</p>
+                                                               <?php
+                                                            endwhile;
+                                                         ?>
+                                                   <?php endwhile; ?>
+                                                <?php endif; ?>
+
+                                          
+                                                <?php if( have_rows('session_3', 'option') ): ?>
+                                                   <?php while( have_rows('session_3', 'option') ): the_row(); ?>
+                                                         <?php
+                                                            while( have_rows('button-3') ) : the_row();
+                                                               ?>
+                                                                  <p><a href="<?php echo get_sub_field('link')?>" class="button"><?php echo get_sub_field('text')?></a></p>
+                                                               <?php
+                                                            endwhile;
+                                                         ?>
+                                                   <?php endwhile; ?>
+                                                <?php endif; ?>
+
                                        </div>
                                     </div>
                                  </div>
@@ -137,24 +245,62 @@
                            <!-- /blockContainer -->
                            <div class="blockContainer anim fadeup js-anim blockWrap_e395c21b342b4399846a8027b582a693 fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeUp">
                               <div class="blockContent block_e395c21b342b4399846a8027b582a693  layoutD layoutD--vAlign1 imgWidth--50 hasImg">
-                                 <div class="blockImg"><a href="#"><img src="<?php echo get_bloginfo("template_directory"); ?>/assets/imgs/website_smlOptNw.png" data-asset="da8dfff83b2d45999de1ac441bbac5ce" alt="website_smlOptNw.png" data-mod="width:700" class="contentImg"></a></div>
+                                       <?php
+                                          $session4 = get_field('session_4', 'option');
+                                       ?>
+                                 <div class="blockImg"><a href="#"><img src="<?php echo $session4['image-4'] ?>" data-asset="da8dfff83b2d45999de1ac441bbac5ce" alt="website_smlOptNw.png" data-mod="width:700" class="contentImg"></a></div>
                                  <div class="blockText">
                                     <h2 class="contentTitle">
                                        <div class="blockContainer blockWrap_b12b1cca1df24557beaa5b34f8e33917 fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeRight secondaryTitle">
                                           <div class="blockContent block_b12b1cca1df24557beaa5b34f8e33917  layoutA">
                                              <div class="blockText">
-                                                <h2 class="contentTitle">Websites</h2>
+                                                <h2 class="contentTitle">
+                                                      <?php if( have_rows('session_4', 'option') ): ?>
+                                                         <?php while( have_rows('session_4', 'option') ): the_row(); ?>
+                                                               <?php
+                                                                  while( have_rows('icon-4') ) : the_row();
+                                                                     ?>
+                                                                        <?php echo get_sub_field('text')?>
+                                                                     <?php
+                                                                  endwhile;
+                                                               ?>
+                                                         <?php endwhile; ?>
+                                                      <?php endif; ?>
+                                                </h2>
                                              </div>
                                              <!-- /blockText-->
                                           </div>
                                           <!-- /blockContent -->
                                        </div>
-                                       <span class="maxWidth--contentTitle">Get a website or online store</span>
+                                       <span class="maxWidth--contentTitle"><?php echo $session4['title-4'] ?></span>
                                     </h2>
                                     <div class="blockInnerContent">
                                        <div class="maxWidth--content">
-                                          <p>Create your own website using an easy drag-and-drop builder, or work with our team to design the website or online store of your dreams. <a href="#">See how it easy it is</a>.</p>
-                                          <p><a href="#" class="button">Plans &amp; Pricing</a></p>
+                                       <p><?php echo $session4['content-4']?>
+                                                <?php if( have_rows('session_4', 'option') ): ?>
+                                                   <?php while( have_rows('session_4', 'option') ): the_row(); ?>
+                                                         <?php
+                                                            while( have_rows('text_blue-4') ) : the_row();
+                                                               ?>
+                                                                  <a href="<?php echo get_sub_field('link')?>"><?php echo get_sub_field('text')?></a>.</p>
+                                                               <?php
+                                                            endwhile;
+                                                         ?>
+                                                   <?php endwhile; ?>
+                                                <?php endif; ?>
+
+                                          
+                                                <?php if( have_rows('session_4', 'option') ): ?>
+                                                   <?php while( have_rows('session_4', 'option') ): the_row(); ?>
+                                                         <?php
+                                                            while( have_rows('button-4') ) : the_row();
+                                                               ?>
+                                                                  <p><a href="<?php echo get_sub_field('link')?>" class="button"><?php echo get_sub_field('text')?></a></p>
+                                                               <?php
+                                                            endwhile;
+                                                         ?>
+                                                   <?php endwhile; ?>
+                                                <?php endif; ?>
                                        </div>
                                     </div>
                                  </div>
@@ -166,26 +312,66 @@
                            <!-- /blockContainer -->
                            <div class="blockContainer anim fadeup js-anim blockWrap_d860c1cedb9744a281daa7870cd0e0df fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeUp">
                               <div class="blockContent block_d860c1cedb9744a281daa7870cd0e0df  layoutC layoutC--vAlign1 imgWidth--50 hasImg">
-                                 <div class="blockImg"><a href="#"><img src="<?php echo get_bloginfo("template_directory"); ?>/assets/imgs/sellProductsOnline.png" data-asset="d174c7d21c44438e98ac532c447aaf1b" alt="sellProductsOnline.png" data-mod="width:700" class="contentImg"></a></div>
+                                       <?php
+                                          $session5 = get_field('session_5', 'option');
+                                       ?>
+                                 <div class="blockImg"><a href="#"><img src="<?php echo $session5['image-5'] ?>" data-asset="d174c7d21c44438e98ac532c447aaf1b" alt="sellProductsOnline.png" data-mod="width:700" class="contentImg"></a></div>
                                  <div class="blockText">
                                     <h2 class="contentTitle">
                                        <span class="maxWidth--contentTitle">
                                           <div class="blockContainer blockWrap_d320f2798e56470680b25d943bc666c7 fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeRight secondaryTitle">
                                              <div class="blockContent block_d320f2798e56470680b25d943bc666c7  layoutA">
                                                 <div class="blockText">
-                                                   <h2 class="contentTitle"><span class="maxWidth--contentTitle">Ecommerce</span></h2>
+                                                   <h2 class="contentTitle"><span class="maxWidth--contentTitle">
+                                                      <?php if( have_rows('session_5', 'option') ): ?>
+                                                         <?php while( have_rows('session_5', 'option') ): the_row(); ?>
+                                                               <?php
+                                                                  while( have_rows('icon-5') ) : the_row();
+                                                                     ?>
+                                                                        <?php echo get_sub_field('text')?>
+                                                                     <?php
+                                                                  endwhile;
+                                                               ?>
+                                                         <?php endwhile; ?>
+                                                      <?php endif; ?>
+                                                   </span></h2>
                                                 </div>
                                                 <!-- /blockText-->
                                              </div>
                                              <!-- /blockContent -->
                                           </div>
-                                          Sell your products online
-                                       </span>
+                                          
+
+                                          <span class="maxWidth--contentTitle"><?php echo $session5['title-5'] ?></span>
                                     </h2>
                                     <div class="blockInnerContent">
                                        <div class="maxWidth--content">
-                                          <p>Make your products stand out by utilizing best-in-class tools that allow customers to browse products, select options and checkout with ease. <a href="#">Learn how</a>.</p>
-                                          <p><a href="#" class="button">Plans &amp; Pricing</a></p>
+                                       <p><?php echo $session5['content-5']?>
+                                                <?php if( have_rows('session_5', 'option') ): ?>
+                                                   <?php while( have_rows('session_5', 'option') ): the_row(); ?>
+                                                         <?php
+                                                            while( have_rows('text_blue-5') ) : the_row();
+                                                               ?>
+                                                                  <a href="<?php echo get_sub_field('link')?>"><?php echo get_sub_field('text')?></a>.</p>
+                                                               <?php
+                                                            endwhile;
+                                                         ?>
+                                                   <?php endwhile; ?>
+                                                <?php endif; ?>
+
+                                          
+                                                <?php if( have_rows('session_5', 'option') ): ?>
+                                                   <?php while( have_rows('session_5', 'option') ): the_row(); ?>
+                                                         <?php
+                                                            while( have_rows('button-5') ) : the_row();
+                                                               ?>
+                                                                  <p><a href="<?php echo get_sub_field('link')?>" class="button"><?php echo get_sub_field('text')?></a></p>
+                                                               <?php
+                                                            endwhile;
+                                                         ?>
+                                                   <?php endwhile; ?>
+                                                <?php endif; ?>
+
                                        </div>
                                     </div>
                                  </div>
@@ -197,24 +383,67 @@
                            <!-- /blockContainer -->
                            <div class="blockContainer anim fadeup js-anim blockWrap_fa3261865d9845348d53958d8a02bbfc fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeUp">
                               <div class="blockContent block_fa3261865d9845348d53958d8a02bbfc  layoutD layoutD--vAlign1 imgWidth--50 hasImg">
-                                 <div class="blockImg"><a href="#"><img src="<?php echo get_bloginfo("template_directory"); ?>/assets/imgs/Restaurant-AssetsIntel.png" data-asset="e1f43ef91a9140a2aed952b7833a9d59" alt="Restaurant-AssetsIntel.png" data-mod="width:700" data-tags="[&quot;payments&quot;]" class="contentImg"></a></div>
+                                       <?php
+                                          $session6 = get_field('session_6', 'option');
+                                       ?>
+                                 <div class="blockImg"><a href="#"><img src="<?php echo $session6['image-6'] ?>" data-mod="width:700" data-tags="[&quot;payments&quot;]" class="contentImg"></a></div>
                                  <div class="blockText">
                                     <h2 class="contentTitle">
                                        <div class="blockContainer blockWrap_d049dace093e4afe9366baa1e90e0f6e fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeRight secondaryTitle">
                                           <div class="blockContent block_d049dace093e4afe9366baa1e90e0f6e  layoutA">
                                              <div class="blockText">
-                                                <h2 class="contentTitle">Payments</h2>
+                                                <h2 class="contentTitle"><span class="maxWidth--contentTitle">
+                                                      <?php if( have_rows('session_6', 'option') ): ?>
+                                                         <?php while( have_rows('session_6', 'option') ): the_row(); ?>
+                                                               <?php
+                                                                  while( have_rows('icon-6') ) : the_row();
+                                                                     ?>
+                                                                        <?php echo get_sub_field('text')?>
+                                                                     <?php
+                                                                  endwhile;
+                                                               ?>
+                                                         <?php endwhile; ?>
+                                                      <?php endif; ?>
+                                                   </span></h2>
                                              </div>
                                              <!-- /blockText-->
                                           </div>
                                           <!-- /blockContent -->
                                        </div>
-                                       <span class="maxWidth--contentTitle">Accept and manage payments</span>
+                                       <span class="maxWidth--contentTitle"><?php echo $session6['title-6'] ?></span>
                                     </h2>
                                     <div class="blockInnerContent">
                                        <div class="maxWidth--content">
-                                          <p>Send invoices, manage subscriptions, accept payments online or in-person and more. Get approved and connect to your bank account in minutes. <a href="#">See how it works</a>.</p>
-                                          <p><a href="#" class="button">Plans &amp; Pricing</a></p>
+
+
+                                       <p><?php echo $session6['content-6']?>
+                                                <?php if( have_rows('session_6', 'option') ): ?>
+                                                   <?php while( have_rows('session_6', 'option') ): the_row(); ?>
+                                                         <?php
+                                                            while( have_rows('text_blue-6') ) : the_row();
+                                                               ?>
+                                                                  <a href="<?php echo get_sub_field('link')?>"><?php echo get_sub_field('text')?></a>.</p>
+                                                               <?php
+                                                            endwhile;
+                                                         ?>
+                                                   <?php endwhile; ?>
+                                                <?php endif; ?>
+
+                                          
+                                                <?php if( have_rows('session_6', 'option') ): ?>
+                                                   <?php while( have_rows('session_6', 'option') ): the_row(); ?>
+                                                         <?php
+                                                            while( have_rows('button-6') ) : the_row();
+                                                               ?>
+                                                                  <p><a href="<?php echo get_sub_field('link')?>" class="button"><?php echo get_sub_field('text')?></a></p>
+                                                               <?php
+                                                            endwhile;
+                                                         ?>
+                                                   <?php endwhile; ?>
+                                                <?php endif; ?>
+
+
+
                                        </div>
                                     </div>
                                  </div>
@@ -226,50 +455,99 @@
                            <!-- /blockContainer -->
                            <div class="blockContainer anim fadeup js-anim">
                               <h2 class="contentTitle h-contentTitle">
+                                       <?php
+                                          $session7 = get_field('session_7', 'option');
+                                       ?>
                                  <span class="maxWidth--contentTitle blue">
-                                 Tại sao chọn chúng tôi
+                                 <?php echo $session7['title-7'] ?>
                                  </span>
                               </h2>
                               <div class="blockContent h-blockContent">
                                  <div class="wrap-column">
-                                    <div class="h-column1">
-                                       <div class="wrap-column1">
-                                          <div class="column-img">
-                                             <img src="<?php echo get_bloginfo("template_directory"); ?>/assets/imgs/badgeinc5000-100.png" alt="">
-                                          </div>
-                                          <div class="column1-container">
-                                             <div class="column-container-title blue">
-                                                <h2>Giá cả hợp lý và đội ngủ nhân viên chuyên nghiệp</h2>
-                                             </div>
-                                             <div class="column-content">Chúng tôi làm việc hầu hết mọi quy mô danh nghiệp</div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <div class="h-column2">
-                                       <div class="wrap-column2">
-                                          <div class="column-img">
-                                             <img src="<?php echo get_bloginfo("template_directory"); ?>/assets/imgs/badgeinc5000-100.png" alt="">
-                                          </div>
-                                          <div class="column-container-title">
-                                             <h2>Đối tác làm việc với Google</h2>
-                                          </div>
-                                          <div class="column-content">Chúng tôi làm việc hầu hết mọi quy mô danh nghiệp</div>
-                                       </div>
-                                    </div>
-                                    <div class="h-column3">
-                                       <div class="wrap-column3">
-                                          <div class="column-img">
-                                             <img src="<?php echo get_bloginfo("template_directory"); ?>/assets/imgs/badgeinc5000-100.png" alt="">
-                                          </div>
-                                          <div class="column-container-title">
-                                             <h2>Đối tác làm việc với Facebook</h2>
-                                          </div>
-                                          <div class="column-content">Chúng tôi làm việc hầu hết mọi quy mô danh nghiệp</div>
-                                       </div>
-                                    </div>
+                                                 
+                                 
+                                 <?php if( have_rows('session_7', 'option') ): ?>
+                                    <?php while( have_rows('session_7', 'option') ): the_row(); ?>
+                                          <?php
+                                             $countRepeater = count(get_sub_field('column-7'));
+                                             $count = 1;
+                                             while( have_rows('column-7') ) : the_row();
+                                                if($count == 1)
+                                                {
+                                                   ?>
+                                                         <div class="h-column1">
+                                                            <div class="wrap-column1">
+                                                               <div class="column-img">
+                                                                  <img src="<?php echo get_sub_field('icon'); ?>" alt="">
+                                                               </div>
+                                                               <div class="column1-container">
+                                                                  <div class="column-container-title blue">
+                                                                     <h2><?php echo get_sub_field('title'); ?></h2>
+                                                                  </div>
+                                                                  <div class="column-content"><?php echo get_sub_field('content'); ?></div>
+                                                               </div>
+                                                            </div>
+                                                         </div>
+                                                   <?php
+                                                }
+
+                                                if($count == 2)
+                                                {
+                                                   ?>
+                                                        <div class="h-column2">
+                                                            <div class="wrap-column2">
+                                                               <div class="column-img">
+                                                                  <img src="<?php echo get_sub_field('icon'); ?>" alt="">
+                                                               </div>
+                                                               <div class="column-container-title">
+                                                                  <h2><?php echo get_sub_field('title'); ?></h2>
+                                                               </div>
+                                                               <div class="column-content"><?php echo get_sub_field('content'); ?></div>
+                                                            </div>
+                                                         </div>
+                                                   <?php
+                                                }
+
+                                                if($count == 3)
+                                                {
+                                                   ?>
+                                                      <div class="h-column3">
+                                                         <div class="wrap-column3">
+                                                            <div class="column-img">
+                                                               <img src="<?php echo get_sub_field('icon'); ?>" alt="">
+                                                            </div>
+                                                            <div class="column-container-title">
+                                                               <h2><?php echo get_sub_field('title'); ?></h2>
+                                                            </div>
+                                                            <div class="column-content"><?php echo get_sub_field('content'); ?></div>
+                                                         </div>
+                                                      </div>
+                                                   <?php
+                                                }
+                                                
+                                                $count ++;
+                                                
+                                       endwhile;
+                                          ?>
+                                    <?php endwhile; ?>
+                                 <?php endif; ?>
+                                    
                                  </div>
                                  <div class="h-button">
-                                    <button>Yêu cầu tư vấn miễn phí >></button>
+                                    <button>
+                                    <?php if( have_rows('session_7', 'option') ): ?>
+                                          <?php while( have_rows('session_7', 'option') ): the_row(); ?>
+                                             <?php
+                                                while( have_rows('black-7') ) : the_row();
+                                                   ?>
+                                                      <a href="<?php echo get_sub_field('link')?>" style="color: #fff"><?php echo get_sub_field('text')?></a>
+                                                   <?php
+                                                endwhile;
+                                             ?>
+                                             <?php endwhile; ?>
+                                    <?php endif; ?>
+                                       
+                                    </button>
                                  </div>
                               </div>
                               <!-- /blockContent -->
@@ -278,9 +556,11 @@
                            <!-- /blockContainer -->
                            <!-- /blockContainer -->
                            <div class="blockContainer anim fadeup js-anim blockWrap_e395c21b342b4399846a8027b582a693 fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeUp">
-                              
+                                 <?php
+                                    $session8 = get_field('session_8', 'option');
+                                 ?>
                              
-                              <div class="title-star">Được tin dùng bởi start-up và các cơ sở kinh doanh vừa và nhỏ</div>
+                              <div class="title-star"> <?php echo $session8['text_star-8'] ?></div>
                               <div class="blockInnerContent h-blockInnerContent">
                                  <ul class="ratings">
                                     <li><img src="<?php echo get_bloginfo("template_directory"); ?>/assets/imgs/gold-stars2.png" alt="stars" class="contentImg"></li>
@@ -293,49 +573,80 @@
                                        <div class="blockContainer blockWrap_b12b1cca1df24557beaa5b34f8e33917 fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeRight secondaryTitle">
                                        </div>
                                        <span class="maxWidth--contentTitle blue">
-                                       Hỗ trợ chuyên nghiệp và nhanh chóng
+                                          <?php echo $session8['title-8'] ?>
                                        </span>
                                     </h2>
                                     <div class="blockInnerContent">
                                        <div class="maxWidth--content">
-                                          <p>Create your own website using an easy drag-and-drop builder, or work with our team to design the website or online store of your dreams.</p>
+                                          <p><?php echo $session8['content-8'] ?></p>
                                        </div>
                                        <div class="wrap-column column-50">
-                                          <div class="h-column1">
-                                             <div class="wrap-column1">
-                                                <div class="column-img">
-                                                   <img src="<?php echo get_bloginfo("template_directory"); ?>/assets/imgs/badgeinc5000-100.png" alt="">
-                                                </div>
-                                                <div class="column1-container">
-                                                   <div class="column-container-title">
-                                                      <h2>24/7</h2>
-                                                   </div>
-                                                   <div class="column-content">Chúng tôi làm việc hầu hết mọi quy mô danh nghiệp</div>
-                                                </div>
-                                             </div>
-                                          </div>
-                                          <div class="h-column2">
-                                             <div class="wrap-column2">
-                                                <div class="column-img">
-                                                   <img src="<?php echo get_bloginfo("template_directory"); ?>/assets/imgs/badgeinc5000-100.png" alt="">
-                                                </div>
-                                                <div class="column-container-title">
-                                                   <h2>24/7</h2>
-                                                </div>
-                                                <div class="column-content">Chúng tôi làm việc hầu hết mọi quy mô danh nghiệp</div>
-                                             </div>
-                                          </div>
-                                          <div class="h-column3">
-                                             <div class="wrap-column3">
-                                                <div class="column-img">
-                                                   <img src="<?php echo get_bloginfo("template_directory"); ?>/assets/imgs/badgeinc5000-100.png" alt="">
-                                                </div>
-                                                <div class="column-container-title">
-                                                   <h2>24/7</h2>
-                                                </div>
-                                                <div class="column-content">Chúng tôi làm việc hầu hết mọi quy mô danh nghiệp</div>
-                                             </div>
-                                          </div>
+                                       <?php if( have_rows('session_8', 'option') ): ?>
+                                          <?php while( have_rows('session_8', 'option') ): the_row(); ?>
+                                                <?php
+                                                   $countRepeater = count(get_sub_field('column-8'));
+                                                   $count = 1;
+                                                   while( have_rows('column-8') ) : the_row();
+                                                      if($count == 1)
+                                                      {
+                                                         ?>
+                                                               <div class="h-column1">
+                                                                  <div class="wrap-column1">
+                                                                     <div class="column-img">
+                                                                         <img src="<?php echo get_sub_field('icon'); ?>" alt="">
+                                                                     </div>
+                                                                     <div class="column1-container">
+                                                                        <div class="column-container-title">
+                                                                           <h2><?php echo get_sub_field('title'); ?></h2>
+                                                                        </div>
+                                                                        <div class="column-content"><?php echo get_sub_field('content'); ?></div>
+                                                                     </div>
+                                                                  </div>
+                                                               </div>
+                                                         <?php
+                                                      }
+
+                                                      if($count == 2)
+                                                      {
+                                                         ?>
+                                                             <div class="h-column2">
+                                                               <div class="wrap-column2">
+                                                                  <div class="column-img">
+                                                                      <img src="<?php echo get_sub_field('icon'); ?>" alt="">
+                                                                  </div>
+                                                                  <div class="column-container-title">
+                                                                     <h2><?php echo get_sub_field('title'); ?></h2>
+                                                                  </div>
+                                                                  <div class="column-content"><?php echo get_sub_field('content'); ?></div>
+                                                               </div>
+                                                            </div>
+                                                         <?php
+                                                      }
+
+                                                      if($count == 3)
+                                                      {
+                                                         ?>
+                                                            <div class="h-column3">
+                                                               <div class="wrap-column3">
+                                                                  <div class="column-img">
+                                                                      <img src="<?php echo get_sub_field('icon'); ?>" alt="">
+                                                                  </div>
+                                                                  <div class="column-container-title">
+                                                                     <h2><?php echo get_sub_field('title'); ?></h2>
+                                                                  </div>
+                                                                  <div class="column-content"><?php echo get_sub_field('content'); ?></div>
+                                                               </div>
+                                                            </div>
+                                                         <?php
+                                                      }
+                                                      
+                                                      $count ++;
+                                                      
+                                             endwhile;
+                                                ?>
+                                          <?php endwhile; ?>
+                                       <?php endif; ?>
+                                          
                                        </div>
                                     </div>
                                  </div>
@@ -345,7 +656,19 @@
                                
                               </style>
                               <div class="h-button">
-                                 <button>096 999 9999</button>
+                                 <button>
+                                    <?php if( have_rows('session_8', 'option') ): ?>
+                                          <?php while( have_rows('session_8', 'option') ): the_row(); ?>
+                                             <?php
+                                                while( have_rows('black-8') ) : the_row();
+                                                   ?>
+                                                      <a href="<?php echo get_sub_field('link')?>" style="color: #fff"><?php echo get_sub_field('text')?></a>
+                                                   <?php
+                                                endwhile;
+                                             ?>
+                                             <?php endwhile; ?>
+                                    <?php endif; ?>
+                                 </button>
                               </div>
                            </div>
                            <div class="blockContainer anim fadeup js-anim">

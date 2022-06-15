@@ -12,7 +12,7 @@
       <link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/custom.css?v=15">
       <link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/icon.css">
       <link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/style.css?v=9">
-      <link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/reponsive.css?v=7">
+      <link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/reponsive.css?v=8">
       <link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/animation.css?v=7">
       <?php wp_head(); ?>
    <body>
@@ -152,63 +152,21 @@
                                     </a>
                                  </li>
                                  <li>
-                                    <span class="navLabel" style="cursor: pointer;">More <span class="dropArrow subnavClosed"><img src="<?php echo get_bloginfo("template_directory"); ?>/assets/imgs/icon/dropArrow.png" alt="drop arrow"></span></span>
-                                    <ul class="subNav" style="display: none;">
-                                       <li>
-                                          <a href="/about" itemprop="url" class="tourDesc">
-                                             About
-                                             <p>We love small business</p>
-                                          </a>
-                                       </li>
-                                       <li>
-                                          <a href="/creative-services" itemprop="url" class="tourDesc">
-                                             Creative Services
-                                             <p>Branding, video and more</p>
-                                          </a>
-                                       </li>
-                                       <li>
-                                          <a href="/success-stories" itemprop="url" class="tourDesc">
-                                             Success Stories
-                                             <p>Real brands, real results</p>
-                                          </a>
-                                       </li>
-                                       <li>
-                                          <a href="/our-reviews" itemprop="url" class="tourDesc">
-                                             Our Reviews
-                                             <p>What people are saying</p>
-                                          </a>
-                                       </li>
-                                       <li>
-                                          <a href="https://partners.marketing360.com/" itemprop="url" class="tourDesc">
-                                             Partner With Us
-                                             <p>Explore becoming a partner</p>
-                                          </a>
-                                       </li>
-                                       <li>
-                                          <a href="https://marketplace.marketing360.com/" itemprop="url" class="tourDesc">
-                                             Marketplace
-                                             <p>Partners you can trust</p>
-                                          </a>
-                                       </li>
-                                       <li>
-                                          <a href="/support" itemprop="url" class="tourDesc">
-                                             Support
-                                             <p>Online help and beyond</p>
-                                          </a>
-                                       </li>
-                                       <li>
-                                          <a href="https://blog.marketing360.com/" itemprop="url" class="tourDesc">
-                                             Blog
-                                             <p>Resource to help you grow</p>
-                                          </a>
-                                       </li>
-                                       <li>
-                                          <a href="/contact-us" itemprop="url" class="tourDesc">
-                                             Contact Us
-                                             <p>Get in touch with us</p>
-                                          </a>
-                                       </li>
-                                    </ul>
+                                    <a href="/tour-by-industry" itemprop="url">
+                                       Blog
+                                    </a>
+                                 </li>
+
+                                 <li>
+                                    <a href="/tour-by-industry" itemprop="url">
+                                      Tuyển Dung
+                                    </a>
+                                 </li>
+
+                                 <li>
+                                    <a href="/tour-by-industry" itemprop="url">
+                                      Liên Hệ
+                                    </a>
                                  </li>
                                 
                               </ul>
