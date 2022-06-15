@@ -9,7 +9,7 @@
       <link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/base.css?v=7">
       <link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/page.css?v=7">
       <link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/vendor-print.css?v=7">
-      <link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/custom.css?v=7">
+      <link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/custom.css?v=15">
       <link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/icon.css">
       <link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/style.css?v=9">
       <link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/reponsive.css?v=7">
@@ -41,11 +41,18 @@
                            </header>
                            <!-- /headerContent -->
                         </div>
+
+                        <!-- mobile -->
                         <div class="navContainer mobileDropDownNav collapsed h-mobile">
                            <nav class="navContent">
                               <ul id="navTopLevel" data-subnav-collapse="true" class="mobileDropDownNav">
                                  <li>
-                                    <span class="navLabel" style="cursor: pointer;">Tour Platform <span class="dropArrow subnavClosed"><img src="<?php echo get_bloginfo("template_directory"); ?>/assets/imgs/icon/dropArrow.png" alt="drop arrow"></span></span>
+                                    <a href="https://careers.madwire.com/" target="_blank" rel="noopener noreferrer" itemprop="url">
+                                    Trang Chủ
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <span class="navLabel" style="cursor: pointer;">Dịch Vụ<span class="dropArrow subnavClosed"><img src="<?php echo get_bloginfo("template_directory"); ?>/assets/imgs/icon/dropArrow.png" alt="drop arrow"></span></span>
                                     <ul class="subNav" style="display: none;">
                                        <li>
                                           <a href="/marketing-team" itemprop="url" class="tourDesc">
@@ -141,7 +148,7 @@
                                  </li>
                                  <li>
                                     <a href="/tour-by-industry" itemprop="url">
-                                    Tour by Industry
+                                    Giới Thiệu
                                     </a>
                                  </li>
                                  <li>
@@ -203,11 +210,7 @@
                                        </li>
                                     </ul>
                                  </li>
-                                 <li>
-                                    <a href="https://careers.madwire.com/" target="_blank" rel="noopener noreferrer" itemprop="url">
-                                    Careers
-                                    </a>
-                                 </li>
+                                
                               </ul>
                            </nav>
                            <!-- /navContent -->
@@ -217,7 +220,13 @@
                            <nav class="navContent">
                               <ul id="navTopLevel" data-mobile-nav-label="Menu" data-mobile-nav-style="dropdown" data-mobile-nav-reveal="push" data-mobile-nav-animation="slide" data-mobile-nav-trigger="icon" data-mobile-nav-icon-position="right" data-home-nav-collapse-min="1" data-subnav-collapse="true" itemscope="" itemtype="http://www.schema.org/SiteNavigationElement">
                                  <li>
-                                    <span class="navLabel">Tour Platform <span class="dropArrow">
+                                    <a href="<?php echo get_home_url()?>">
+                                    Trang Chủ
+                                    </a>
+                                 </li>
+                                 
+                                 <li>
+                                    <span class="navLabel">Dịch Vụ <span class="dropArrow">
                                     <img src="<?php echo get_bloginfo("template_directory"); ?>/assets/imgs/icon/dropArrow.png" alt="drop arrow"></span>
                                     </span>
                                     <ul class="subNav">
@@ -315,10 +324,29 @@
                                  </li>
                                  <li>
                                     <a href="#" itemprop="url">
-                                    Tour by Industry
+                                    Giới Thiệu
                                     </a>
                                  </li>
+                                 
                                  <li>
+                                    <a href="#" itemprop="url">
+                                    Blog
+                                    </a>
+                                 </li>
+
+                                 <li>
+                                    <a href="#" itemprop="url">
+                                    Tuyển Dụng
+                                    </a>
+                                 </li>
+
+                                 <li>
+                                    <a href="#" itemprop="url">
+                                    Liên Hệ
+                                    </a>
+                                 </li>
+
+                                 <!-- <li>
                                     <span class="navLabel">More <span class="dropArrow">
                                     <img src="<?php echo get_bloginfo("template_directory"); ?>/assets/imgs/icon/dropArrow.png" alt="drop arrow">
                                     </span></span>
@@ -378,12 +406,8 @@
                                           </a>
                                        </li>
                                     </ul>
-                                 </li>
-                                 <li>
-                                    <a href="#" target="_blank" rel="noopener noreferrer" itemprop="url">
-                                    Careers
-                                    </a>
-                                 </li>
+                                 </li> -->
+                               
                                  <div class="navButtonWrap">
                                     <li>
                                        <a href="#" itemprop="url">
