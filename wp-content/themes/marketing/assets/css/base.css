@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400&display=swap');
 html,
 body,
 div,
@@ -65,7 +64,6 @@ td {
     font-family: inherit;
     font-size: 100%;
     vertical-align: baseline;
-    overflow-wrap: break-word;
 }
 
 body {
@@ -288,7 +286,7 @@ html,
 body {
     color: #24282f;
     font-size: 16px;
-    font-family: 'Source Sans Pro', Arial, Verdana, sans-serif;
+    font-family: sourcesanspro, Arial, Verdana, sans-serif;
     font-style: normal;
     font-weight: 400;
     line-height: 1.6;
@@ -380,7 +378,7 @@ input[type="submit"] {
     color: #fff;
     letter-spacing: normal;
     text-transform: none;
-    font-family: 'Source Sans Pro', Arial, Verdana, sans-serif;
+    font-family: sourcesansprobold, Arial, Verdana, sans-serif;
     font-style: normal;
     font-weight: 700;
     border-radius: 5px;
@@ -585,7 +583,7 @@ input[type="submit"]:focus {
 .pageTitle {
     color: #24282f;
     font-size: 52px;
-    font-family: 'Source Sans Pro', Arial, Verdana, sans-serif;
+    font-family: sourcesansprobold, Arial, Verdana, sans-serif;
     font-style: normal;
     font-weight: 700;
     text-transform: none;
@@ -596,7 +594,7 @@ input[type="submit"]:focus {
 .pageSubtitle {
     color: #24282f;
     font-size: 18px;
-    font-family: 'Source Sans Pro', Arial, Verdana, sans-serif;
+    font-family: sourcesanspro, Arial, Verdana, sans-serif;
     font-style: normal;
     font-weight: 400;
     text-transform: none;
@@ -624,7 +622,7 @@ input[type="submit"]:focus {
 
 .contentTitle,
 .contentTitle a {
-    font-family: 'Source Sans Pro', Arial, Verdana, sans-serif;
+    font-family: sourcesansprobold, Arial, Verdana, sans-serif;
     font-style: normal;
     font-weight: 700;
     color: #24282f;
@@ -634,7 +632,7 @@ input[type="submit"]:focus {
 .itemInnerContent b,
 .blockInnerContent strong,
 .itemInnerContent strong {
-    font-family: 'Source Sans Pro', Arial, Verdana, sans-serif;
+    font-family: sourcesansprobold, Arial, Verdana, sans-serif;
     font-style: normal;
     font-weight: 700;
     color: #24282f;
@@ -643,14 +641,14 @@ input[type="submit"]:focus {
 
 .eventColl--permalink1 .eventColl-month,
 .eventColl--permalink1 .eventColl-date {
-    font-family: 'Source Sans Pro', Arial, Verdana, sans-serif;
+    font-family: sourcesansprobold, Arial, Verdana, sans-serif;
     font-style: normal;
     font-weight: 700;
 }
 
 .eventColl--gridView3 .eventColl-detail--venue,
 .eventColl--gridView5 .eventColl-detail--venue {
-    font-family: 'Source Sans Pro', Arial, Verdana, sans-serif;
+    font-family: sourcesansprobold, Arial, Verdana, sans-serif;
     font-style: normal;
     font-weight: 700;
 }
@@ -659,7 +657,7 @@ input[type="submit"]:focus {
 .itemInnerContent i,
 .blockInnerContent em,
 .itemInnerContent em {
-    font-family: 'Source Sans Pro', Arial, Verdana, sans-serif;
+    font-family: sourcesansproitalic, Arial, Verdana, sans-serif;
     font-style: italic;
     font-weight: 400;
     color: #24282f;
@@ -668,7 +666,7 @@ input[type="submit"]:focus {
 
 .categoryHeader {
     color: #24282f;
-    font-family: 'Source Sans Pro', Arial, Verdana, sans-serif;
+    font-family: sourcesansprobold, Arial, Verdana, sans-serif;
     font-style: normal;
     font-weight: 700;
     margin-bottom: 1em;
@@ -686,7 +684,7 @@ input[type="submit"]:focus {
 }
 
 .dividerTitle {
-    font-family: 'Source Sans Pro', Arial, Verdana, sans-serif;
+    font-family: sourcesansprobold, Arial, Verdana, sans-serif;
     font-style: normal;
     font-weight: 700;
     line-height: 1.1;
@@ -1067,10 +1065,9 @@ td {
     height: 40px;
 }
 
-
-/* .primaryAndSecondaryContainer {
+.primaryAndSecondaryContainer {
     padding-top: 1.5em;
-} */
+}
 
 .pwp-container {
     background-color: transparent;
@@ -1099,7 +1096,7 @@ td {
 
 .pwp-error {
     color: #24282f;
-    font-family: 'Source Sans Pro', Arial, Verdana, sans-serif;
+    font-family: sourcesansprobold, Arial, Verdana, sans-serif;
     font-style: normal;
     font-weight: 700;
 }
@@ -1259,7 +1256,7 @@ td {
     padding-top: 15px;
     padding-bottom: 15px;
     font-size: 16px;
-    font-family: 'Source Sans Pro', Arial, Verdana, sans-serif;
+    font-family: sourcesansprobold, Arial, Verdana, sans-serif;
     font-style: normal;
     font-weight: 700;
     text-transform: none;
@@ -1296,7 +1293,7 @@ td {
     background: #006dd0;
     letter-spacing: normal;
     text-transform: none;
-    font-family: 'Source Sans Pro', Arial, Verdana, sans-serif;
+    font-family: sourcesansprobold, Arial, Verdana, sans-serif;
     font-style: normal;
     font-weight: 700;
     border-radius: 5px;
@@ -1379,8 +1376,8 @@ td {
 }
 
 .footerContainer {
-    color: #fff;
-    background-color: #006ed0;
+    color: #bdbec0;
+    background-color: #24282f;
     background-image: none;
     background-position: 50% 50%;
     background-attachment: scroll;
@@ -1388,7 +1385,7 @@ td {
     background-repeat: no-repeat;
     text-align: left;
     padding-top: 70px;
-    /*padding-bottom: 40px;*/
+    padding-bottom: 40px;
     letter-spacing: 0;
     font-size: 16px;
     border-style: solid;
@@ -1421,7 +1418,7 @@ td {
 .footerContent .blockInnerContent,
 .footerContent .itemInnerContent,
 .footerContent .defItemInnerContent {
-    color: #fff;
+    color: #bdbec0;
 }
 
 .footerContent button,
@@ -1516,12 +1513,10 @@ td {
 .scCredit {
     clear: both;
     padding-top: 24px;
-    padding-bottom: 24px;
     width: 100%;
     float: none;
-    font-size: .9em;
-    line-height: .9em;
-    text-align: center;
+    font-size: 12px;
+    text-align: left;
 }
 
 .scCredit,
@@ -1531,11 +1526,11 @@ td {
 .scCredit a:active,
 .scCredit a:focus,
 .scCredit span {
-    color: #fff;
+    color: #505359;
 }
 
 .scCredit span {
-    font-weight: bold;
+    text-decoration: underline;
 }
 
 .scCredit:first-child {
@@ -1560,19 +1555,19 @@ td {
 }
 
 .sourcesansprobold {
-    font-family: 'Source Sans Pro', Arial, Verdana, sans-serif;
+    font-family: sourcesansprobold, Arial, Verdana, sans-serif;
     font-style: normal;
     font-weight: 700;
 }
 
 .sourcesansproitalic {
-    font-family: 'Source Sans Pro', Arial, Verdana, sans-serif;
+    font-family: sourcesansproitalic, Arial, Verdana, sans-serif;
     font-style: italic;
     font-weight: 400;
 }
 
 .sourcesanspro {
-    font-family: 'Source Sans Pro', Arial, Verdana, sans-serif;
+    font-family: sourcesanspro, Arial, Verdana, sans-serif;
     font-style: normal;
     font-weight: 400;
 }
@@ -2359,7 +2354,7 @@ ul.sitemap .socialIcons {
 .blockText ul,
 .itemContent ul {
     list-style-type: disc;
-    padding-left: 1em;
+    padding-left: 1.75em;
 }
 
 .blockText .unstyledList,
@@ -4810,7 +4805,7 @@ html.plxBg body {
 }
 
 .imgCaption-title {
-    font-family: 'Source Sans Pro', Arial, Verdana, sans-serif;
+    font-family: sourcesansprobold, Arial, Verdana, sans-serif;
     font-style: normal;
     font-weight: 700;
 }
@@ -5583,7 +5578,7 @@ html.plxBg body {
     display: inline-block;
     width: 0.9em;
     text-align: left;
-    content: "â€¢";
+    content: "•";
     margin-left: -0.9em;
 }
 
@@ -5889,7 +5884,7 @@ button.locFinder-acResult:focus {
 button.locFinder-acResult mark {
     background-color: transparent;
     color: #000;
-    font-family: 'Source Sans Pro', Arial, Verdana, sans-serif;
+    font-family: sourcesansprobold, Arial, Verdana, sans-serif;
     font-style: normal;
     font-weight: 700;
 }
@@ -7767,7 +7762,7 @@ ul>.scTruncateEllipsis {
 }
 
 .eventColl--listView1 .eventColl-detail+.eventColl-detail:before {
-    content: "â€¢";
+    content: "•";
     display: inline-block;
     margin-right: 0.4em;
 }
@@ -7896,7 +7891,7 @@ ul>.scTruncateEllipsis {
 }
 
 .eventColl--listView2 .eventColl-detail+.eventColl-detail:before {
-    content: "â€¢";
+    content: "•";
     display: inline-block;
     margin-right: 0.4em;
 }
@@ -8079,7 +8074,7 @@ ul>.scTruncateEllipsis {
 }
 
 .eventColl--gridView1 .eventColl-detail+.eventColl-detail:before {
-    content: "â€¢";
+    content: "•";
     display: inline-block;
     margin-right: 0.4em;
 }
@@ -8424,7 +8419,7 @@ ul>.scTruncateEllipsis {
 
 .eventColl--gridView3 .eventColl-detail--doors:before,
 .eventColl--gridView3 .eventColl-detail--restrictions:before {
-    content: "â€¢";
+    content: "•";
     display: inline-block;
     margin-right: 0.4em;
 }
@@ -8933,7 +8928,7 @@ ul>.scTruncateEllipsis {
 }
 
 .eventColl-item--slideshow1 .eventColl-detail+.eventColl-detail:before {
-    content: "â€¢";
+    content: "•";
     display: inline-block;
     margin-right: 0.4em;
 }
@@ -9025,7 +9020,7 @@ ul>.scTruncateEllipsis {
 }
 
 .eventColl--permalink1 .eventColl-detail+.eventColl-detail:before {
-    content: "â€¢";
+    content: "•";
     display: inline-block;
     margin-right: 0.4em;
 }
@@ -9199,7 +9194,7 @@ ul>.scTruncateEllipsis {
 }
 
 .tmColl-phoneLabel {
-    font-family: 'Source Sans Pro', Arial, Verdana, sans-serif;
+    font-family: sourcesansprobold, Arial, Verdana, sans-serif;
     font-style: normal;
     font-weight: 700;
 }
@@ -9215,7 +9210,7 @@ ul>.scTruncateEllipsis {
 .headerContainer,
 .navContainer,
 .primaryAndSecondaryContent,
-.footerContent {
+.footerContainer {
     padding-left: 4%;
     padding-right: 4%;
 }
@@ -10433,8 +10428,6 @@ ul>.scTruncateEllipsis {
     }
     .primaryContentContainer {
         clear: both;
-        /* display: flex;
-        flex-wrap: wrap; */
     }
     .headerContent h1.logo {
         width: 100%;
