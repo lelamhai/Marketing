@@ -8206,6 +8206,7 @@ body.single-post .wrap-column {
 
 body.archive .column {
     padding: 0 30px 20px;
+    flex: 0 1 calc(50% - 70px);
 }
 
 body.archive .column .entry-title {
