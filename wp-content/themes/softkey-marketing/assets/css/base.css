@@ -65,6 +65,7 @@ td {
     font-family: inherit;
     font-size: 100%;
     vertical-align: baseline;
+    overflow-wrap: break-word;
 }
 
 body {
@@ -1377,8 +1378,8 @@ td {
 }
 
 .footerContainer {
-    color: #bdbec0;
-    background-color: #24282f;
+    color: #fff;
+    background-color: #006ed0;
     background-image: none;
     background-position: 50% 50%;
     background-attachment: scroll;
@@ -1386,7 +1387,7 @@ td {
     background-repeat: no-repeat;
     text-align: left;
     padding-top: 70px;
-    padding-bottom: 40px;
+    /*padding-bottom: 40px;*/
     letter-spacing: 0;
     font-size: 16px;
     border-style: solid;
@@ -1419,7 +1420,7 @@ td {
 .footerContent .blockInnerContent,
 .footerContent .itemInnerContent,
 .footerContent .defItemInnerContent {
-    color: #bdbec0;
+    color: #fff;
 }
 
 .footerContent button,
@@ -1514,10 +1515,12 @@ td {
 .scCredit {
     clear: both;
     padding-top: 24px;
+    padding-bottom: 24px;
     width: 100%;
     float: none;
-    font-size: 12px;
-    text-align: left;
+    font-size: .9em;
+    line-height: .9em;
+    text-align: center;
 }
 
 .scCredit,
@@ -1527,11 +1530,11 @@ td {
 .scCredit a:active,
 .scCredit a:focus,
 .scCredit span {
-    color: #505359;
+    color: #fff;
 }
 
 .scCredit span {
-    text-decoration: underline;
+    font-weight: bold;
 }
 
 .scCredit:first-child {
@@ -2355,7 +2358,7 @@ ul.sitemap .socialIcons {
 .blockText ul,
 .itemContent ul {
     list-style-type: disc;
-    padding-left: 1.75em;
+    padding-left: 1em;
 }
 
 .blockText .unstyledList,
@@ -9211,7 +9214,7 @@ ul>.scTruncateEllipsis {
 .headerContainer,
 .navContainer,
 .primaryAndSecondaryContent,
-.footerContainer {
+.footerContent {
     padding-left: 4%;
     padding-right: 4%;
 }

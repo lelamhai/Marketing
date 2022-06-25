@@ -1756,9 +1756,9 @@ if( function_exists('acf_add_local_field_group') ):
         'location' => array(
             array(
                 array(
-                    'param' => 'options_page',
+                    'param' => 'page_template',
                     'operator' => '==',
-                    'value' => 'acf-options-theme-options',
+                    'value' => 'templates/template-design-1.php',
                 ),
             ),
         ),

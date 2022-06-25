@@ -1,24 +1,28 @@
 <?php
 /**
- * Template part for displaying home sections
+ * Template part for displaying about sections
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package Softkey_Marketing
  */
 
+$queried_obj = get_queried_object();
+
 ?>
 <div class="primaryAndSecondaryContainer">
     <div class="primaryAndSecondaryContent">
         <div class="primaryContentContainer">
             <section class="primaryContent" role="main">
+                
+                <?php
+                    $session1 = get_field('session_1');
+                    if( $session1 ) {
+                ?>
                 <div class="blockContainer anim fadeup js-anim blockWrap_e36a212bc2b840c68d579c5ae522ca75 fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeRight" itemscope="" itemtype="http://schema.org/ImageGallery">
                     <div class="blockContent imageGallery imagesCollection block_e36a212bc2b840c68d579c5ae522ca75  layoutA blockContentBleed hasImg hasStackedGallery deferredLoadGallery imgOnly" data-image-count="1" data-pagination-anim="none" data-pagenum="1" data-img-server="https://static.mywebsites360.com" data-gallery-block-id="e36a212bc2b840c68d579c5ae522ca75" data-large-img-opts="2GTQbgiNxerRr5gcT6hkjr8dsnb6NBTxXMi2obS">
                         <div class="blockImg">
                             <ul class="stackedGallery galleryWrapper imagesLoaded">
-                                <?php
-                                $session1 = get_field('session_1', 'option');
-                                ?>
                                 <li class="stackedGallery-item">
                                     <img src="<?php echo $session1['image-1'] ?> " data-asset="f921905f8b1f41a3a1bd01a8b45adc6a" alt="TourByIndustryOptimized21.png" data-mod="width:4000" class="contentImg visible ended">
                                 </li>
@@ -38,9 +42,9 @@
                                     <?php
                                     $data = "";
                                     $frist = "";
-                                    if (have_rows('session_1', 'option')) : ?>
+                                    if (have_rows('session_1')) : ?>
 
-                                        <?php while (have_rows('session_1', 'option')) : the_row(); ?>
+                                        <?php while (have_rows('session_1')) : the_row(); ?>
                                             <?php
                                             $countRepeater = count(get_sub_field('text_blue-1'));
                                             $count = 1;
@@ -94,8 +98,8 @@
                                 <div class="blockText">
                                     <div class="blockInnerContent">
                                         <div class="maxWidth--content">
-                                            <?php if (have_rows('session_1', 'option')) : ?>
-                                                <?php while (have_rows('session_1', 'option')) : the_row(); ?>
+                                            <?php if (have_rows('session_1')) : ?>
+                                                <?php while (have_rows('session_1')) : the_row(); ?>
                                                     <?php
                                                     while (have_rows('button-1')) : the_row();
                                                     ?>
@@ -137,25 +141,28 @@
                         </div>
                     </div>
                 </div>
+                <?php
+                    }
+                ?>
                 <!-- /blockContainer -->
                 <!-- /blockContainer -->
                 <!-- /blockContainer -->
                 <!-- /blockContainer -->
+                <?php
+                    $session2 = get_field('session_2');
+                    if( $session2 ) {
+                ?>
                 <div id="explore" class="blockContainer anim fadeup js-anim blockWrap_e102cfb01feb45a5a922f4eafc3ab1b1 fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fade">
                     <div class="blockContent block_e102cfb01feb45a5a922f4eafc3ab1b1  layoutA">
                         <div class="blockText">
-                            <?php
-                            $session2 = get_field('session_2', 'option');
-                            ?>
-
-                            <h2 class="contentTitle"><span class="maxWidth--contentTitle"><?php echo $session2['title-2'] ?></span></h2>
+                            <h3 class="contentTitle"><span class="maxWidth--contentTitle"><?php echo $session2['title-2'] ?></span></h3>
                             <div class="blockInnerContent">
                                 <div class="maxWidth--content">
                                     <p>
                                         <?php echo $session2['content-2'] ?>
 
-                                        <?php if (have_rows('session_2', 'option')) : ?>
-                                            <?php while (have_rows('session_2', 'option')) : the_row(); ?>
+                                        <?php if (have_rows('session_2')) : ?>
+                                            <?php while (have_rows('session_2')) : the_row(); ?>
                                                 <?php
                                                 while (have_rows('text_blue-2')) : the_row();
                                                 ?>
@@ -176,22 +183,25 @@
                     <!-- /blockContent -->
                 </div>
                 <!-- /blockContainer -->
+                <?php
+                    }
+                    
+                    $session3 = get_field('session_3');
+                    if( $session3 ) {
+                ?>
                 <!-- /blockContainer -->
                 <div class="blockContainer anim fadeup js-anim blockWrap_f786a8ec71554741a1390a1098432968 fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeUp">
                     <div class="blockContent block_f786a8ec71554741a1390a1098432968  layoutC layoutC--vAlign1 imgWidth--50 hasImg">
-                        <?php
-                        $session3 = get_field('session_3', 'option');
-                        ?>
                         <div class="blockImg"><a href="#"><img src="<?php echo get_bloginfo("template_directory"); ?>/assets/imgs/team-2021.png" data-asset="f4968bc1a4cd407fbb9961518e631bd3" alt="team-2021.png" data-mod="width:700" class="contentImg"></a></div>
                         <div class="blockText">
-                            <h2 class="contentTitle">
+                            <h3 class="contentTitle">
                                 <span class="maxWidth--contentTitle">
                                     <div class="blockContainer blockWrap_d78327a729b344a1bc21ea2c2a2c85a9 fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeRight secondaryTitle">
                                         <div class="blockContent block_d78327a729b344a1bc21ea2c2a2c85a9  layoutA">
                                             <div class="blockText">
-                                                <h2 class="contentTitle"><span class="maxWidth--contentTitle">
-                                                        <?php if (have_rows('session_3', 'option')) : ?>
-                                                            <?php while (have_rows('session_3', 'option')) : the_row(); ?>
+                                                <h3 class="contentTitle"><span class="maxWidth--contentTitle">
+                                                        <?php if (have_rows('session_3')) : ?>
+                                                            <?php while (have_rows('session_3')) : the_row(); ?>
                                                                 <?php
                                                                 while (have_rows('icon-3')) : the_row();
                                                                 ?>
@@ -201,7 +211,7 @@
                                                                 ?>
                                                             <?php endwhile; ?>
                                                         <?php endif; ?>
-                                                    </span></h2>
+                                                    </span></h3>
                                             </div>
                                             <!-- /blockText-->
                                         </div>
@@ -209,12 +219,12 @@
                                     </div>
                                     <?php echo $session3['title-3'] ?>
                                 </span>
-                            </h2>
+                            </h3>
                             <div class="blockInnerContent">
                                 <div class="maxWidth--content">
                                     <p><?php echo $session3['content-3'] ?>
-                                        <?php if (have_rows('session_3', 'option')) : ?>
-                                            <?php while (have_rows('session_3', 'option')) : the_row(); ?>
+                                        <?php if (have_rows('session_3')) : ?>
+                                            <?php while (have_rows('session_3')) : the_row(); ?>
                                                 <?php
                                                 while (have_rows('text_blue-3')) : the_row();
                                                 ?>
@@ -227,8 +237,8 @@
                         <?php endif; ?>
 
 
-                        <?php if (have_rows('session_3', 'option')) : ?>
-                            <?php while (have_rows('session_3', 'option')) : the_row(); ?>
+                        <?php if (have_rows('session_3')) : ?>
+                            <?php while (have_rows('session_3')) : the_row(); ?>
                                 <?php
                                 while (have_rows('button-3')) : the_row();
                                 ?>
@@ -247,21 +257,24 @@
                     <!-- /blockContent -->
                 </div>
                 <!-- /blockContainer -->
+                <?php
+                    }
+
+                    $session4 = get_field('session_4');
+                    if( $session4 ) {
+                ?>
                 <!-- /blockContainer -->
                 <div class="blockContainer anim fadeup js-anim blockWrap_e395c21b342b4399846a8027b582a693 fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeUp">
                     <div class="blockContent block_e395c21b342b4399846a8027b582a693  layoutD layoutD--vAlign1 imgWidth--50 hasImg">
-                        <?php
-                        $session4 = get_field('session_4', 'option');
-                        ?>
                         <div class="blockImg"><a href="#"><img src="<?php echo $session4['image-4'] ?>" data-asset="da8dfff83b2d45999de1ac441bbac5ce" alt="website_smlOptNw.png" data-mod="width:700" class="contentImg"></a></div>
                         <div class="blockText">
-                            <h2 class="contentTitle">
+                            <h3 class="contentTitle">
                                 <div class="blockContainer blockWrap_b12b1cca1df24557beaa5b34f8e33917 fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeRight secondaryTitle">
                                     <div class="blockContent block_b12b1cca1df24557beaa5b34f8e33917  layoutA">
                                         <div class="blockText">
-                                            <h2 class="contentTitle">
-                                                <?php if (have_rows('session_4', 'option')) : ?>
-                                                    <?php while (have_rows('session_4', 'option')) : the_row(); ?>
+                                            <h3 class="contentTitle">
+                                                <?php if (have_rows('session_4')) : ?>
+                                                    <?php while (have_rows('session_4')) : the_row(); ?>
                                                         <?php
                                                         while (have_rows('icon-4')) : the_row();
                                                         ?>
@@ -271,19 +284,19 @@
                                                         ?>
                                                     <?php endwhile; ?>
                                                 <?php endif; ?>
-                                            </h2>
+                                            </h3>
                                         </div>
                                         <!-- /blockText-->
                                     </div>
                                     <!-- /blockContent -->
                                 </div>
                                 <span class="maxWidth--contentTitle"><?php echo $session4['title-4'] ?></span>
-                            </h2>
+                            </h3>
                             <div class="blockInnerContent">
                                 <div class="maxWidth--content">
                                     <p><?php echo $session4['content-4'] ?>
-                                        <?php if (have_rows('session_4', 'option')) : ?>
-                                            <?php while (have_rows('session_4', 'option')) : the_row(); ?>
+                                        <?php if (have_rows('session_4')) : ?>
+                                            <?php while (have_rows('session_4')) : the_row(); ?>
                                                 <?php
                                                 while (have_rows('text_blue-4')) : the_row();
                                                 ?>
@@ -296,8 +309,8 @@
                         <?php endif; ?>
 
 
-                        <?php if (have_rows('session_4', 'option')) : ?>
-                            <?php while (have_rows('session_4', 'option')) : the_row(); ?>
+                        <?php if (have_rows('session_4')) : ?>
+                            <?php while (have_rows('session_4')) : the_row(); ?>
                                 <?php
                                 while (have_rows('button-4')) : the_row();
                                 ?>
@@ -315,22 +328,25 @@
                     <!-- /blockContent -->
                 </div>
                 <!-- /blockContainer -->
+                <?php
+                    }
+
+                    $session5 = get_field('session_5');
+                    if( $session5 ) {
+                ?>
                 <!-- /blockContainer -->
                 <div class="blockContainer anim fadeup js-anim blockWrap_d860c1cedb9744a281daa7870cd0e0df fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeUp">
                     <div class="blockContent block_d860c1cedb9744a281daa7870cd0e0df  layoutC layoutC--vAlign1 imgWidth--50 hasImg">
-                        <?php
-                        $session5 = get_field('session_5', 'option');
-                        ?>
                         <div class="blockImg"><a href="#"><img src="<?php echo $session5['image-5'] ?>" data-asset="d174c7d21c44438e98ac532c447aaf1b" alt="sellProductsOnline.png" data-mod="width:700" class="contentImg"></a></div>
                         <div class="blockText">
-                            <h2 class="contentTitle">
+                            <h3 class="contentTitle">
                                 <span class="maxWidth--contentTitle">
                                     <div class="blockContainer blockWrap_d320f2798e56470680b25d943bc666c7 fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeRight secondaryTitle">
                                         <div class="blockContent block_d320f2798e56470680b25d943bc666c7  layoutA">
                                             <div class="blockText">
-                                                <h2 class="contentTitle"><span class="maxWidth--contentTitle">
-                                                        <?php if (have_rows('session_5', 'option')) : ?>
-                                                            <?php while (have_rows('session_5', 'option')) : the_row(); ?>
+                                                <h3 class="contentTitle"><span class="maxWidth--contentTitle">
+                                                        <?php if (have_rows('session_5')) : ?>
+                                                            <?php while (have_rows('session_5')) : the_row(); ?>
                                                                 <?php
                                                                 while (have_rows('icon-5')) : the_row();
                                                                 ?>
@@ -340,7 +356,7 @@
                                                                 ?>
                                                             <?php endwhile; ?>
                                                         <?php endif; ?>
-                                                    </span></h2>
+                                                    </span></h3>
                                             </div>
                                             <!-- /blockText-->
                                         </div>
@@ -349,12 +365,12 @@
 
 
                                     <span class="maxWidth--contentTitle"><?php echo $session5['title-5'] ?></span>
-                            </h2>
+                            </h3>
                             <div class="blockInnerContent">
                                 <div class="maxWidth--content">
                                     <p><?php echo $session5['content-5'] ?>
-                                        <?php if (have_rows('session_5', 'option')) : ?>
-                                            <?php while (have_rows('session_5', 'option')) : the_row(); ?>
+                                        <?php if (have_rows('session_5')) : ?>
+                                            <?php while (have_rows('session_5')) : the_row(); ?>
                                                 <?php
                                                 while (have_rows('text_blue-5')) : the_row();
                                                 ?>
@@ -367,8 +383,8 @@
                         <?php endif; ?>
 
 
-                        <?php if (have_rows('session_5', 'option')) : ?>
-                            <?php while (have_rows('session_5', 'option')) : the_row(); ?>
+                        <?php if (have_rows('session_5')) : ?>
+                            <?php while (have_rows('session_5')) : the_row(); ?>
                                 <?php
                                 while (have_rows('button-5')) : the_row();
                                 ?>
@@ -387,21 +403,24 @@
                     <!-- /blockContent -->
                 </div>
                 <!-- /blockContainer -->
+                <?php
+                    }
+
+                    $session6 = get_field('session_6');
+                    if( $session6 ) {
+                ?>
                 <!-- /blockContainer -->
                 <div class="blockContainer anim fadeup js-anim blockWrap_fa3261865d9845348d53958d8a02bbfc fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeUp">
                     <div class="blockContent block_fa3261865d9845348d53958d8a02bbfc  layoutD layoutD--vAlign1 imgWidth--50 hasImg">
-                        <?php
-                        $session6 = get_field('session_6', 'option');
-                        ?>
                         <div class="blockImg"><a href="#"><img src="<?php echo $session6['image-6'] ?>" data-mod="width:700" data-tags="[&quot;payments&quot;]" class="contentImg"></a></div>
                         <div class="blockText">
-                            <h2 class="contentTitle">
+                            <h3 class="contentTitle">
                                 <div class="blockContainer blockWrap_d049dace093e4afe9366baa1e90e0f6e fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeRight secondaryTitle">
                                     <div class="blockContent block_d049dace093e4afe9366baa1e90e0f6e  layoutA">
                                         <div class="blockText">
-                                            <h2 class="contentTitle"><span class="maxWidth--contentTitle">
-                                                    <?php if (have_rows('session_6', 'option')) : ?>
-                                                        <?php while (have_rows('session_6', 'option')) : the_row(); ?>
+                                            <h3 class="contentTitle"><span class="maxWidth--contentTitle">
+                                                    <?php if (have_rows('session_6')) : ?>
+                                                        <?php while (have_rows('session_6')) : the_row(); ?>
                                                             <?php
                                                             while (have_rows('icon-6')) : the_row();
                                                             ?>
@@ -411,21 +430,21 @@
                                                             ?>
                                                         <?php endwhile; ?>
                                                     <?php endif; ?>
-                                                </span></h2>
+                                                </span></h3>
                                         </div>
                                         <!-- /blockText-->
                                     </div>
                                     <!-- /blockContent -->
                                 </div>
                                 <span class="maxWidth--contentTitle"><?php echo $session6['title-6'] ?></span>
-                            </h2>
+                            </h3>
                             <div class="blockInnerContent">
                                 <div class="maxWidth--content">
 
 
                                     <p><?php echo $session6['content-6'] ?>
-                                        <?php if (have_rows('session_6', 'option')) : ?>
-                                            <?php while (have_rows('session_6', 'option')) : the_row(); ?>
+                                        <?php if (have_rows('session_6')) : ?>
+                                            <?php while (have_rows('session_6')) : the_row(); ?>
                                                 <?php
                                                 while (have_rows('text_blue-6')) : the_row();
                                                 ?>
@@ -438,8 +457,8 @@
                         <?php endif; ?>
 
 
-                        <?php if (have_rows('session_6', 'option')) : ?>
-                            <?php while (have_rows('session_6', 'option')) : the_row(); ?>
+                        <?php if (have_rows('session_6')) : ?>
+                            <?php while (have_rows('session_6')) : the_row(); ?>
                                 <?php
                                 while (have_rows('button-6')) : the_row();
                                 ?>
@@ -460,22 +479,25 @@
                     <!-- /blockContent -->
                 </div>
                 <!-- /blockContainer -->
+                <?php
+                    }
+
+                    $session7 = get_field('session_7');
+                    if( $session7 ) {
+                ?>
                 <!-- /blockContainer -->
                 <div class="blockContainer anim fadeup js-anim">
-                    <h2 class="contentTitle h-contentTitle">
-                        <?php
-                        $session7 = get_field('session_7', 'option');
-                        ?>
+                    <h3 class="contentTitle h-contentTitle">
                         <span class="maxWidth--contentTitle blue">
                             <?php echo $session7['title-7'] ?>
                         </span>
-                    </h2>
+                    </h3>
                     <div class="blockContent h-blockContent">
                         <div class="wrap-column">
 
 
-                            <?php if (have_rows('session_7', 'option')) : ?>
-                                <?php while (have_rows('session_7', 'option')) : the_row(); ?>
+                            <?php if (have_rows('session_7')) : ?>
+                                <?php while (have_rows('session_7')) : the_row(); ?>
                                     <?php
                                     $countRepeater = count(get_sub_field('column-7'));
                                     $count = 1;
@@ -489,7 +511,7 @@
                                                     </div>
                                                     <div class="column1-container">
                                                         <div class="column-container-title blue">
-                                                            <h2><?php echo get_sub_field('title'); ?></h2>
+                                                            <h3><?php echo get_sub_field('title'); ?></h3>
                                                         </div>
                                                         <div class="column-content"><?php echo get_sub_field('content'); ?></div>
                                                     </div>
@@ -506,7 +528,7 @@
                                                         <img src="<?php echo get_sub_field('icon'); ?>" alt="">
                                                     </div>
                                                     <div class="column-container-title">
-                                                        <h2><?php echo get_sub_field('title'); ?></h2>
+                                                        <h3><?php echo get_sub_field('title'); ?></h3>
                                                     </div>
                                                     <div class="column-content"><?php echo get_sub_field('content'); ?></div>
                                                 </div>
@@ -522,7 +544,7 @@
                                                         <img src="<?php echo get_sub_field('icon'); ?>" alt="">
                                                     </div>
                                                     <div class="column-container-title">
-                                                        <h2><?php echo get_sub_field('title'); ?></h2>
+                                                        <h3><?php echo get_sub_field('title'); ?></h3>
                                                     </div>
                                                     <div class="column-content"><?php echo get_sub_field('content'); ?></div>
                                                 </div>
@@ -540,8 +562,8 @@
                         </div>
                         <div class="h-button">
                             <button>
-                                <?php if (have_rows('session_7', 'option')) : ?>
-                                    <?php while (have_rows('session_7', 'option')) : the_row(); ?>
+                                <?php if (have_rows('session_7')) : ?>
+                                    <?php while (have_rows('session_7')) : the_row(); ?>
                                         <?php
                                         while (have_rows('black-7')) : the_row();
                                         ?>
@@ -559,12 +581,14 @@
                 </div>
 
                 <!-- /blockContainer -->
+                <?php
+                    }
+
+                    $session8 = get_field('session_8');
+                    if( $session8 ) {
+                ?>
                 <!-- /blockContainer -->
                 <div class="blockContainer anim fadeup js-anim blockWrap_e395c21b342b4399846a8027b582a693 fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeUp">
-                    <?php
-                    $session8 = get_field('session_8', 'option');
-                    ?>
-
                     <div class="title-star"> <?php echo $session8['text_star-8'] ?></div>
                     <div class="blockInnerContent h-blockInnerContent">
                         <ul class="ratings">
@@ -574,20 +598,20 @@
                     </div>
                     <div class="blockContent block_e395c21b342b4399846a8027b582a693  layoutD layoutD--vAlign1 imgWidth--50 hasImg">
                         <div class="blockText">
-                            <h2 class="contentTitle">
+                            <h3 class="contentTitle">
                                 <div class="blockContainer blockWrap_b12b1cca1df24557beaa5b34f8e33917 fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeRight secondaryTitle">
                                 </div>
                                 <span class="maxWidth--contentTitle blue">
                                     <?php echo $session8['title-8'] ?>
                                 </span>
-                            </h2>
+                            </h3>
                             <div class="blockInnerContent">
                                 <div class="maxWidth--content">
                                     <p><?php echo $session8['content-8'] ?></p>
                                 </div>
                                 <div class="wrap-column column-50">
-                                    <?php if (have_rows('session_8', 'option')) : ?>
-                                        <?php while (have_rows('session_8', 'option')) : the_row(); ?>
+                                    <?php if (have_rows('session_8')) : ?>
+                                        <?php while (have_rows('session_8')) : the_row(); ?>
                                             <?php
                                             $countRepeater = count(get_sub_field('column-8'));
                                             $count = 1;
@@ -601,7 +625,7 @@
                                                             </div>
                                                             <div class="column1-container">
                                                                 <div class="column-container-title">
-                                                                    <h2><?php echo get_sub_field('title'); ?></h2>
+                                                                    <h3><?php echo get_sub_field('title'); ?></h3>
                                                                 </div>
                                                                 <div class="column-content"><?php echo get_sub_field('content'); ?></div>
                                                             </div>
@@ -618,7 +642,7 @@
                                                                 <img src="<?php echo get_sub_field('icon'); ?>" alt="">
                                                             </div>
                                                             <div class="column-container-title">
-                                                                <h2><?php echo get_sub_field('title'); ?></h2>
+                                                                <h3><?php echo get_sub_field('title'); ?></h3>
                                                             </div>
                                                             <div class="column-content"><?php echo get_sub_field('content'); ?></div>
                                                         </div>
@@ -634,7 +658,7 @@
                                                                 <img src="<?php echo get_sub_field('icon'); ?>" alt="">
                                                             </div>
                                                             <div class="column-container-title">
-                                                                <h2><?php echo get_sub_field('title'); ?></h2>
+                                                                <h3><?php echo get_sub_field('title'); ?></h3>
                                                             </div>
                                                             <div class="column-content"><?php echo get_sub_field('content'); ?></div>
                                                         </div>
@@ -659,8 +683,8 @@
                     </style>
                     <div class="h-button">
                         <button>
-                            <?php if (have_rows('session_8', 'option')) : ?>
-                                <?php while (have_rows('session_8', 'option')) : the_row(); ?>
+                            <?php if (have_rows('session_8')) : ?>
+                                <?php while (have_rows('session_8')) : the_row(); ?>
                                     <?php
                                     while (have_rows('black-8')) : the_row();
                                     ?>
@@ -673,14 +697,17 @@
                         </button>
                     </div>
                 </div>
-                <!-- <div class="blockContainer anim fadeup js-anim">
-                    <h2 class="contentTitle h-contentTitle">
+                <?php
+                    }
+                ?>
+                <div class="blockContainer anim fadeup js-anim">
+                    <h3 class="contentTitle h-contentTitle">
                         <span class="maxWidth--contentTitle blue">
                             Yêu cầu tư vấn miễn phí
                         </span>
-                    </h2>
+                    </h3>
                     <h6 class="contentDescription ">
-                        <p>Gọi cho chúng tôi hay để lại thông tin ở bên dưới.</p>
+                        <p>Chúng tôi tiếp nhận thông tin khách hàng qua livechat, email hoặc bạn có thể điền form yêu cầu dịch vụ dưới đây</p>
                     </h6>
                     <div class="blockContent">
 
@@ -730,7 +757,7 @@
                             </div>
                         </div>
                     </div>
-                </div> -->
+                </div>
             </section>
             <!-- /primaryContent -->
         </div>

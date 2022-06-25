@@ -132,7 +132,7 @@ if ( ! function_exists( 'softkey_marketing_post_thumbnail' ) ) :
 	 */
 	function softkey_marketing_post_thumbnail($is_banner = false ) {
 
-		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+		if ( post_password_required() || is_attachment() ) {
 			return;
 		}
 
@@ -142,12 +142,20 @@ if ( ! function_exists( 'softkey_marketing_post_thumbnail' ) ) :
 			<div class="post-thumbnail">
 				<?php the_post_thumbnail(); ?>
 			</div><!-- .post-thumbnail -->
-		<?php elseif( is_archive() && $is_banner === true ): ?>
+		<?php elseif( $is_banner === true ): ?>
 			<div class="post-thumbnail">
 				<?php 
-					$term = get_queried_object();
-					$cat_image_obj = get_field('cat-image', $term);
-					echo wp_get_attachment_image( $cat_image_obj['ID'], array('700', '600'), "", array( "class" => "img-responsive" ) );
+					if ( is_archive() ) {
+						$queried_obj = get_queried_object();
+						$image_obj = get_field('cat-image', $queried_obj);
+						$image_id = ( $image_obj ) ? $image_obj : '';
+					} elseif( is_singular() ) {
+						$image_id = ( has_post_thumbnail() ) ? get_post_thumbnail_id() : '';
+					} else {
+						$image_id = '';
+					}
+					$banner_image = ( !empty($image_id) ) ? wp_get_attachment_image( $image_id, array('700', '600'), "", array( "class" => "img-responsive" ) ) : '<img src="'. get_template_directory_uri() .'/assets/imgs/blog-background.png"/>';
+					echo $banner_image;
 				?>
 			</div><!-- .post-thumbnail -->
 		<?php else : ?>

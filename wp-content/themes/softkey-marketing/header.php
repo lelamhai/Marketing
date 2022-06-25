@@ -17,6 +17,9 @@
       <?php wp_head(); ?>
    </head>
    <body <?php body_class(); ?>>
+      <?php
+         $home_url = home_url();
+      ?>
 
       <div class="siteWrapper">
          <div class="page-top">
@@ -48,7 +51,7 @@
                            <nav class="navContent">
                               <ul id="navTopLevel" data-subnav-collapse="true" class="mobileDropDownNav">
                                  <li>
-                                    <a href="https://careers.madwire.com/" target="_blank" rel="noopener noreferrer" itemprop="url">
+                                    <a href="<?php echo home_url(); ?>" target="_blank" rel="noopener noreferrer" itemprop="url">
                                     Trang Chủ
                                     </a>
                                  </li>
@@ -68,12 +71,6 @@
                                           </a>
                                        </li>
                                        <li>
-                                          <a href="/ecommerce" itemprop="url" class="tourDesc">
-                                             Ecommerce
-                                             <p>Sell your products everywhere online</p>
-                                          </a>
-                                       </li>
-                                       <li>
                                           <a href="/payments" itemprop="url" class="tourDesc">
                                              Payments
                                              <p>Get paid easier, faster, your way</p>
@@ -85,7 +82,13 @@
                                              <p>All-in-one business management</p>
                                           </a>
                                        </li>
-                                       <li>
+                                       <!-- <li>
+                                          <a href="/ecommerce" itemprop="url" class="tourDesc">
+                                             Ecommerce
+                                             <p>Sell your products everywhere online</p>
+                                          </a>
+                                       </li> -->
+                                       <!-- <li>
                                           <a href="/crm" itemprop="url" class="tourDesc">
                                              CRM
                                              <p>Stay organized as you scale and grow</p>
@@ -144,28 +147,28 @@
                                              Intelligence
                                              <p>In-depth reporting you need to win</p>
                                           </a>
-                                       </li>
+                                       </li> -->
                                     </ul>
                                  </li>
                                  <li>
-                                    <a href="/tour-by-industry" itemprop="url">
+                                    <a href="<?= home_url() . '/gioi-thieu'; ?>" itemprop="url">
                                     Giới Thiệu
                                     </a>
                                  </li>
                                  <li>
-                                    <a href="/tour-by-industry" itemprop="url">
+                                    <a href="<?= home_url() . '/blog'; ?>" itemprop="url">
                                        Blog
                                     </a>
                                  </li>
 
                                  <li>
-                                    <a href="/tour-by-industry" itemprop="url">
+                                    <a href="<?= home_url() . '/tuyen-dung'; ?>" itemprop="url">
                                       Tuyển Dung
                                     </a>
                                  </li>
 
                                  <li>
-                                    <a href="/tour-by-industry" itemprop="url">
+                                    <a href="<?= home_url() . '/lien-he'; ?>" itemprop="url">
                                       Liên Hệ
                                     </a>
                                  </li>
@@ -203,12 +206,6 @@
                                        </li>
                                        <li>
                                           <a href="#" itemprop="url" class="tourDesc">
-                                             Ecommerce
-                                             <p>Sell your products everywhere online</p>
-                                          </a>
-                                       </li>
-                                       <li>
-                                          <a href="#" itemprop="url" class="tourDesc">
                                              Payments
                                              <p>Get paid easier, faster, your way</p>
                                           </a>
@@ -219,7 +216,13 @@
                                              <p>All-in-one business management</p>
                                           </a>
                                        </li>
-                                       <li>
+                                       <!-- <li>
+                                          <a href="#" itemprop="url" class="tourDesc">
+                                             Ecommerce
+                                             <p>Sell your products everywhere online</p>
+                                          </a>
+                                       </li> -->
+                                       <!-- <li>
                                           <a href="#" itemprop="url" class="tourDesc">
                                              CRM
                                              <p>Stay organized as you scale and grow</p>
@@ -278,29 +281,29 @@
                                              Intelligence
                                              <p>In-depth reporting you need to win</p>
                                           </a>
-                                       </li>
+                                       </li> -->
                                     </ul>
                                  </li>
                                  <li>
-                                    <a href="#" itemprop="url">
+                                    <a href="<?= home_url() . '/about'; ?>" itemprop="url">
                                     Giới Thiệu
                                     </a>
                                  </li>
                                  
                                  <li>
-                                    <a href="#" itemprop="url">
+                                    <a href="<?= home_url() . '/blog'; ?>" itemprop="url">
                                     Blog
                                     </a>
                                  </li>
 
                                  <li>
-                                    <a href="#" itemprop="url">
+                                    <a href="<?= home_url() . '/tuyen-dung'; ?>" itemprop="url">
                                     Tuyển Dụng
                                     </a>
                                  </li>
 
                                  <li>
-                                    <a href="#" itemprop="url">
+                                    <a href="<?= home_url() . '/lien-he'; ?>" itemprop="url">
                                     Liên Hệ
                                     </a>
                                  </li>

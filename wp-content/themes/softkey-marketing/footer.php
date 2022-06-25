@@ -5,20 +5,24 @@
                            <div class="footer-left">
                               <div class="blockContainer h-blockContainer-footer blockWrap_dfcda1b6f0614f3ea2ef32dfff9f0ae2 ">
                                  <div class="blockContent block_dfcda1b6f0614f3ea2ef32dfff9f0ae2  ">
-                                    <div class="blockInnerContent">
-                                       <div class="blockImg footerLogo"><a href="#"><img src="<?php echo get_bloginfo("template_directory"); ?>/assets/imgs/logoWhite.png" alt="" class="contentImg"></a></div>
+                                    <div class="blockText">
+                                       <h2 class="contentTitle">Softkey Marketing</h2>
+                                       <div class="blockInnerContent">
+                                          <h3>Our Satellite offices:</h3>
+                                          <ul class="unstyledList">
+                                             <li><span>Denver, Colorado, USA</span></li>
+                                             <li><span>San Francisco, California, USA</span></li>
+                                             <li><span>Hobart, Tasmania, Australia</span></li>
+                                             <li><span>HCMC, Vietnam</span></li>
+                                          </ul>
+                                          <ul class="unstyledList">
+                                             <li><span>Hotline: <a href="tel:777">777</a></span></li>
+                                             <li><span>Email: <a href="mailto:contact@softkeymarketing.com">contact@softkeymarketing.com</a></span></li>
+                                             <li><span>Website: <a href="https://softkeymarketing.com">Softkeymarketing.com</a></span></li>
+                                          </ul>
+                                       </div>
                                     </div>
-                                 </div>
-                                 <!-- /blockContent -->
-                                 <div class="blockContent block_cb69f2836c1e4fd3ae3c58325e352bf6  trustLogos">
-                                    <div class="blockInnerContent">
-                                       <ul>
-                                          <li><a href=""><img src="<?php echo get_bloginfo("template_directory"); ?>/assets/imgs/badgeinc5000-100.png" alt="Inc 5000 Fastest Growing" class="contentImg"></a></li>
-                                          <li><a href=""><img src="<?php echo get_bloginfo("template_directory"); ?>/assets/imgs/badgeglassdoor-100.png" alt="Glassdoor Best Places to Work" class="contentImg"></a></li>
-                                          <li><a href=""><img src="<?php echo get_bloginfo("template_directory"); ?>/assets/imgs/badgefamily-100.png" alt="Top 50 Family Owned Colorado Biz" class="contentImg"></a></li>
-                                          <li><a href="https://www.marketing360.com/military-discount"><img src="<?php echo get_bloginfo("template_directory"); ?>/assets/imgs/militaryDiscount230.png" alt="Military Discount" class="contentImg"></a></li>
-                                       </ul>
-                                    </div>
+                                    <!-- /blockText-->
                                  </div>
                               </div>
                            </div>
@@ -27,19 +31,13 @@
                               <div class="blockContainer h-right-footer">
                                  <div class="blockContent block_c637705c1911407589c1e6085d62c077 ">
                                     <div class="blockText">
-                                       <h2 class="contentTitle">More</h2>
+                                       <h2 class="contentTitle">Services</h2>
                                        <div class="blockInnerContent">
-                                          <ul class="unstyledList">
-                                             <li><a href="https://www.marketing360.com/about">About Us</a></li>
-                                             <li><a href="https://www.marketing360.com/creative-services">Creative Services</a></li>
-                                             <li><a href="https://www.marketing360.com/success-stories">Success Stories</a></li>
-                                             <li><a href="https://www.marketing360.com/our-reviews">Our Reviews</a></li>
-                                             <li><a href="https://partners.marketing360.com/">Partner With Us</a></li>
-                                             <li><a href="https://marketplace.marketing360.com/">Marketplace</a></li>
-                                             <li><a href="https://blog.marketing360.com/">Blog</a></li>
-                                             <li><a href="https://podcast.madwire.com/" target="_blank" rel="noopener noreferrer">Podcast</a></li>
-                                             <li><a href="https://pages.marketing360.com/community-offers">Community Offers</a></li>
-                                             <li><a href="https://integrations.marketing360.com/">Integrations</a></li>
+                                          <ul>
+                                             <li><a href="#">Online Booking System</a></li>
+                                             <li><a href="#">Website Design</a></li>
+                                             <li><a href="#">Hosting & SEO Marketing</a></li>
+                                             <li><a href="#">Marketing Management</a></li>
                                           </ul>
                                        </div>
                                     </div>
@@ -51,19 +49,14 @@
                               <div class="blockContainer h-right-footer">
                                  <div class="blockContent block_c637705c1911407589c1e6085d62c077 ">
                                     <div class="blockText">
-                                       <h2 class="contentTitle">More</h2>
+                                       <h2 class="contentTitle">Useful Info</h2>
                                        <div class="blockInnerContent">
-                                          <ul class="unstyledList">
-                                             <li><a href="https://www.marketing360.com/about">About Us</a></li>
-                                             <li><a href="https://www.marketing360.com/creative-services">Creative Services</a></li>
-                                             <li><a href="https://www.marketing360.com/success-stories">Success Stories</a></li>
-                                             <li><a href="https://www.marketing360.com/our-reviews">Our Reviews</a></li>
-                                             <li><a href="https://partners.marketing360.com/">Partner With Us</a></li>
-                                             <li><a href="https://marketplace.marketing360.com/">Marketplace</a></li>
-                                             <li><a href="https://blog.marketing360.com/">Blog</a></li>
-                                             <li><a href="https://podcast.madwire.com/" target="_blank" rel="noopener noreferrer">Podcast</a></li>
-                                             <li><a href="https://pages.marketing360.com/community-offers">Community Offers</a></li>
-                                             <li><a href="https://integrations.marketing360.com/">Integrations</a></li>
+                                          <p>Our mission is to help small businesses grow and make a difference.</p>
+                                          <ul>
+                                             <li><a href="#">Online Booking System</a></li>
+                                             <li><a href="#">Website Design</a></li>
+                                             <li><a href="#">Hosting & SEO Marketing</a></li>
+                                             <li><a href="#">Marketing Management</a></li>
                                           </ul>
                                        </div>
                                     </div>
@@ -75,44 +68,10 @@
                               <div class="blockContainer h-right-footer">
                                  <div class="blockContent block_c637705c1911407589c1e6085d62c077 ">
                                     <div class="blockText">
-                                       <h2 class="contentTitle">More</h2>
+                                       <h2 class="contentTitle">Let's Get in Touch!</h2>
                                        <div class="blockInnerContent">
-                                          <ul class="unstyledList">
-                                             <li><a href="https://www.marketing360.com/about">About Us</a></li>
-                                             <li><a href="https://www.marketing360.com/creative-services">Creative Services</a></li>
-                                             <li><a href="https://www.marketing360.com/success-stories">Success Stories</a></li>
-                                             <li><a href="https://www.marketing360.com/our-reviews">Our Reviews</a></li>
-                                             <li><a href="https://partners.marketing360.com/">Partner With Us</a></li>
-                                             <li><a href="https://marketplace.marketing360.com/">Marketplace</a></li>
-                                             <li><a href="https://blog.marketing360.com/">Blog</a></li>
-                                             <li><a href="https://podcast.madwire.com/" target="_blank" rel="noopener noreferrer">Podcast</a></li>
-                                             <li><a href="https://pages.marketing360.com/community-offers">Community Offers</a></li>
-                                             <li><a href="https://integrations.marketing360.com/">Integrations</a></li>
-                                          </ul>
-                                       </div>
-                                    </div>
-                                    <!-- /blockText-->
-                                 </div>
-                                 <!-- /blockContent -->
-                              </div>
-                              <!-- /blockContainer -->
-                              <div class="blockContainer h-right-footer">
-                                 <div class="blockContent block_c637705c1911407589c1e6085d62c077 ">
-                                    <div class="blockText">
-                                       <h2 class="contentTitle">More</h2>
-                                       <div class="blockInnerContent">
-                                          <ul class="unstyledList">
-                                             <li><a href="https://www.marketing360.com/about">About Us</a></li>
-                                             <li><a href="https://www.marketing360.com/creative-services">Creative Services</a></li>
-                                             <li><a href="https://www.marketing360.com/success-stories">Success Stories</a></li>
-                                             <li><a href="https://www.marketing360.com/our-reviews">Our Reviews</a></li>
-                                             <li><a href="https://partners.marketing360.com/">Partner With Us</a></li>
-                                             <li><a href="https://marketplace.marketing360.com/">Marketplace</a></li>
-                                             <li><a href="https://blog.marketing360.com/">Blog</a></li>
-                                             <li><a href="https://podcast.madwire.com/" target="_blank" rel="noopener noreferrer">Podcast</a></li>
-                                             <li><a href="https://pages.marketing360.com/community-offers">Community Offers</a></li>
-                                             <li><a href="https://integrations.marketing360.com/">Integrations</a></li>
-                                          </ul>
+                                          <p>Contact Us</p>
+                                          <p>Hãy để lại lời nhắn yêu cầu dịch vụ qua Facebook Messenger, Email, Zalo, Hotline. Chúng tôi sẽ hồi đáp lại cho bạn ngay hoặc chậm nhất trong vòng 24h.</p>
                                        </div>
                                     </div>
                                     <!-- /blockText-->
@@ -121,6 +80,7 @@
                               </div>
                            </div>
                         </div>
+                        <?php /*
                         <!-- /blockContainer -->
                         <div class="blockContainer blockWrap_d2614212e52249088bf7d7438a2cf87e ">
                            <div class="blockContent block_d2614212e52249088bf7d7438a2cf87e ">
@@ -176,9 +136,10 @@
                         </div>
                         <!-- /blockContainer -->
                         <!-- /blockContainer -->
-                        <div class="scCredit"><a href="https://www.websites360.com/" target="_blank" rel="nofollow">Created with <span>Websites 360</span></a></div>
+                        */ ?>
                      </div>
                   </footer>
+                     <div class="scCredit"><a href="https://softkeymarketing.com" target="_blank" rel="nofollow">©All Rights Reserved. Power by <span>Softkeymarketing.com</span></a></div>
                </div>
                <!--  /footerContainer -->
             </div>
