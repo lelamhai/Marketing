@@ -156,7 +156,7 @@
                                     </a>
                                  </li>
                                  <li>
-                                    <a href="<?= home_url() . '/blog'; ?>" itemprop="url">
+                                    <a href="<?= home_url() . '/category/blog/'; ?>" itemprop="url">
                                        Blog
                                     </a>
                                  </li>
@@ -291,7 +291,7 @@
                                  </li>
                                  
                                  <li>
-                                    <a href="<?= home_url() . '/blog'; ?>" itemprop="url">
+                                    <a href="<?= home_url() . '/category/blog/'; ?>" itemprop="url">
                                     Blog
                                     </a>
                                  </li>
