@@ -139,7 +139,7 @@
                         */ ?>
                      </div>
                   </footer>
-                     <div class="scCredit"><a href="https://softkeymarketing.com" target="_blank" rel="nofollow">©All Rights Reserved. Power by <span>Softkeymarketing.com</span></a></div>
+                     <div class="scCredit"><a href="https://softkeymarketing.com" target="_blank" rel="nofollow">©All Rights Reserved. Powered by <span>Softkeymarketing.com</span></a></div>
                </div>
                <!--  /footerContainer -->
             </div>

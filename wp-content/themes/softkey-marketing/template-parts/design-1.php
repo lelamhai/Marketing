@@ -17,7 +17,7 @@ $queried_obj = get_queried_object();
                 
                 <?php
                     $session1 = get_field('session_1');
-                    if( $session1 ) {
+                    if( $session1['title-1'] || $session1['content-1'] || $session1['image-1'] || ( have_rows('text_blue-1') || have_rows('button-1') ) ) {
                 ?>
                 <div class="blockContainer anim fadeup js-anim blockWrap_e36a212bc2b840c68d579c5ae522ca75 fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeRight" itemscope="" itemtype="http://schema.org/ImageGallery">
                     <div class="blockContent imageGallery imagesCollection block_e36a212bc2b840c68d579c5ae522ca75  layoutA blockContentBleed hasImg hasStackedGallery deferredLoadGallery imgOnly" data-image-count="1" data-pagination-anim="none" data-pagenum="1" data-img-server="https://static.mywebsites360.com" data-gallery-block-id="e36a212bc2b840c68d579c5ae522ca75" data-large-img-opts="2GTQbgiNxerRr5gcT6hkjr8dsnb6NBTxXMi2obS">
@@ -33,6 +33,7 @@ $queried_obj = get_queried_object();
                     <!-- /blockContent -->
                 </div>
                 <!-- /blockContainer -->
+                <?php if (have_rows('session_1')) : ?>
                 <div class="industryWrap anim fadeup js-anim">
                     <div class="blockContainer blockWrap_d53e455f20924c9e9d225a6cf57f288e fsMed txa0 bmg0 lstsy1 bw0 sy0 blockAnim blockAnim--fadeUp">
                         <div class="blockContent block_d53e455f20924c9e9d225a6cf57f288e  blockContentBleed industryIntro">
@@ -41,12 +42,11 @@ $queried_obj = get_queried_object();
                                     <!-- PC -->
                                     <?php
                                     $data = "";
-                                    $frist = "";
-                                    if (have_rows('session_1')) : ?>
+                                    $frist = ""; ?>
 
                                         <?php while (have_rows('session_1')) : the_row(); ?>
                                             <?php
-                                            $countRepeater = count(get_sub_field('text_blue-1'));
+                                            $countRepeater = ( get_sub_field('text_blue-1') ) ? count(get_sub_field('text_blue-1')) : '';
                                             $count = 1;
                                             while (have_rows('text_blue-1')) : the_row();
                                                 if ($count == 1) {
@@ -62,7 +62,6 @@ $queried_obj = get_queried_object();
                                             endwhile;
                                             ?>
                                         <?php endwhile; ?>
-                                    <?php endif; ?>
 
 
                                     <?php
@@ -141,6 +140,7 @@ $queried_obj = get_queried_object();
                         </div>
                     </div>
                 </div>
+                <?php endif; ?>
                 <?php
                     }
                 ?>
@@ -150,7 +150,7 @@ $queried_obj = get_queried_object();
                 <!-- /blockContainer -->
                 <?php
                     $session2 = get_field('session_2');
-                    if( $session2 ) {
+                    if( $session2['title-2'] || $session2['content-2'] ) {
                 ?>
                 <div id="explore" class="blockContainer anim fadeup js-anim blockWrap_e102cfb01feb45a5a922f4eafc3ab1b1 fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fade">
                     <div class="blockContent block_e102cfb01feb45a5a922f4eafc3ab1b1  layoutA">
@@ -187,7 +187,7 @@ $queried_obj = get_queried_object();
                     }
                     
                     $session3 = get_field('session_3');
-                    if( $session3 ) {
+                    if( $session3['title-3'] || ( have_rows('icon-3') || have_rows('text_blue-3') || have_rows('button-3') ) ) {
                 ?>
                 <!-- /blockContainer -->
                 <div class="blockContainer anim fadeup js-anim blockWrap_f786a8ec71554741a1390a1098432968 fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeUp">
@@ -261,7 +261,7 @@ $queried_obj = get_queried_object();
                     }
 
                     $session4 = get_field('session_4');
-                    if( $session4 ) {
+                    if( $session4['title-4'] || $session4['content-4'] || $session4['image-4'] || ( have_rows('icon-4') || have_rows('text_blue-4') || have_rows('button-4') ) ) {
                 ?>
                 <!-- /blockContainer -->
                 <div class="blockContainer anim fadeup js-anim blockWrap_e395c21b342b4399846a8027b582a693 fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeUp">
@@ -332,7 +332,7 @@ $queried_obj = get_queried_object();
                     }
 
                     $session5 = get_field('session_5');
-                    if( $session5 ) {
+                    if( ($session5['image-5'] || $session5['title-5']) || ( have_rows('icon-5') || have_rows('text_blue-5') ) ) {
                 ?>
                 <!-- /blockContainer -->
                 <div class="blockContainer anim fadeup js-anim blockWrap_d860c1cedb9744a281daa7870cd0e0df fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeUp">
@@ -407,7 +407,7 @@ $queried_obj = get_queried_object();
                     }
 
                     $session6 = get_field('session_6');
-                    if( $session6 ) {
+                    if ( $session6['image-6'] || $session6['title-6'] || $session6['content-6'] || have_rows('text_blue-6') ) {
                 ?>
                 <!-- /blockContainer -->
                 <div class="blockContainer anim fadeup js-anim blockWrap_fa3261865d9845348d53958d8a02bbfc fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeUp">
@@ -419,7 +419,6 @@ $queried_obj = get_queried_object();
                                     <div class="blockContent block_d049dace093e4afe9366baa1e90e0f6e  layoutA">
                                         <div class="blockText">
                                             <h3 class="contentTitle"><span class="maxWidth--contentTitle">
-                                                    <?php if (have_rows('session_6')) : ?>
                                                         <?php while (have_rows('session_6')) : the_row(); ?>
                                                             <?php
                                                             while (have_rows('icon-6')) : the_row();
@@ -429,7 +428,6 @@ $queried_obj = get_queried_object();
                                                             endwhile;
                                                             ?>
                                                         <?php endwhile; ?>
-                                                    <?php endif; ?>
                                                 </span></h3>
                                         </div>
                                         <!-- /blockText-->
@@ -483,7 +481,7 @@ $queried_obj = get_queried_object();
                     }
 
                     $session7 = get_field('session_7');
-                    if( $session7 ) {
+                    if( $session7['title-7'] || ( have_rows('column-7') || have_rows('black-7') ) ) {
                 ?>
                 <!-- /blockContainer -->
                 <div class="blockContainer anim fadeup js-anim">
@@ -499,7 +497,7 @@ $queried_obj = get_queried_object();
                             <?php if (have_rows('session_7')) : ?>
                                 <?php while (have_rows('session_7')) : the_row(); ?>
                                     <?php
-                                    $countRepeater = count(get_sub_field('column-7'));
+                                    $countRepeater = ( get_sub_field('column-7') ) ? count(get_sub_field('column-7')) : '';
                                     $count = 1;
                                     while (have_rows('column-7')) : the_row();
                                         if ($count == 1) {
@@ -585,7 +583,7 @@ $queried_obj = get_queried_object();
                     }
 
                     $session8 = get_field('session_8');
-                    if( $session8 ) {
+                    if( $session8['text_star-8'] || $session8['title-8'] || $session8['content-8'] || have_rows('column-8') ) {
                 ?>
                 <!-- /blockContainer -->
                 <div class="blockContainer anim fadeup js-anim blockWrap_e395c21b342b4399846a8027b582a693 fsMed txa0 bmg0 lstSyNrmlzd bw0 sy0 blockAnim blockAnim--fadeUp">
@@ -613,7 +611,7 @@ $queried_obj = get_queried_object();
                                     <?php if (have_rows('session_8')) : ?>
                                         <?php while (have_rows('session_8')) : the_row(); ?>
                                             <?php
-                                            $countRepeater = count(get_sub_field('column-8'));
+                                            $countRepeater = ( get_sub_field('column-8') ) ? count(get_sub_field('column-8')) : '';
                                             $count = 1;
                                             while (have_rows('column-8')) : the_row();
                                                 if ($count == 1) {
@@ -681,21 +679,21 @@ $queried_obj = get_queried_object();
                     <style>
 
                     </style>
+                    <?php if (have_rows('session_8')) : ?>
                     <div class="h-button">
                         <button>
-                            <?php if (have_rows('session_8')) : ?>
-                                <?php while (have_rows('session_8')) : the_row(); ?>
-                                    <?php
-                                    while (have_rows('black-8')) : the_row();
-                                    ?>
-                                        <a href="<?php echo get_sub_field('link') ?>" style="color: #fff"><?php echo get_sub_field('text') ?></a>
-                                    <?php
-                                    endwhile;
-                                    ?>
-                                <?php endwhile; ?>
-                            <?php endif; ?>
+                            <?php while (have_rows('session_8')) : the_row(); ?>
+                                <?php
+                                while (have_rows('black-8')) : the_row();
+                                ?>
+                                    <a href="<?php echo get_sub_field('link') ?>" style="color: #fff"><?php echo get_sub_field('text') ?></a>
+                                <?php
+                                endwhile;
+                                ?>
+                            <?php endwhile; ?>
                         </button>
                     </div>
+                    <?php endif; ?>
                 </div>
                 <?php
                     }
