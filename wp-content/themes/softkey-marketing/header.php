@@ -285,7 +285,7 @@
                                     </ul>
                                  </li>
                                  <li>
-                                    <a href="<?= home_url() . '/about'; ?>" itemprop="url">
+                                    <a href="<?= home_url() . '/gioi-thieu'; ?>" itemprop="url">
                                     Giới Thiệu
                                     </a>
                                  </li>
