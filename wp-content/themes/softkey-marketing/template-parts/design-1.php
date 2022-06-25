@@ -11,6 +11,14 @@ $queried_obj = get_queried_object();
 
 ?>
 <div class="primaryAndSecondaryContainer">
+    
+    <?php if( get_field('video_banner') ) { ?>
+        <div class="ParallaxVideo">
+            <video autoplay muted loop>
+                <source src="<?= get_field('video_banner'); ?>" type="video/mp4">
+            </video>
+        </div>
+    <?php } ?>
     <div class="primaryAndSecondaryContent">
         <div class="primaryContentContainer">
             <section class="primaryContent" role="main">
